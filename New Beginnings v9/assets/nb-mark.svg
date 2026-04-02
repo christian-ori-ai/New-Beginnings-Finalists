@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">New Beginnings mark</title>
+  <desc id="desc">Refined monogram star mark.</desc>
+  <defs>
+    <linearGradient id="ring" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#b26c88" />
+      <stop offset="1" stop-color="#6e3f56" />
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="88" height="88" rx="30" fill="#fffaf6" stroke="url(#ring)" stroke-width="1.8" />
+  <path d="M48 18v18M39 27h18" fill="none" stroke="url(#ring)" stroke-width="1.8" stroke-linecap="round" />
+  <path d="M44 23l8 8M52 23l-8 8" fill="none" stroke="url(#ring)" stroke-width="1.3" stroke-linecap="round" />
+  <text x="48" y="64" text-anchor="middle" fill="#563146" font-size="28" font-weight="600" font-family="Cormorant Garamond, Times New Roman, serif">NB</text>
+</svg>
