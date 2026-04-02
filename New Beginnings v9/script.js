@@ -22,7 +22,7 @@ if (navToggle && navMenu) {
     setMenuState(isOpen);
   });
 
-  navMenu.querySelectorAll("a").forEach((link) => {
+  navMenu.querySelectorAll("a, button").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
 
