@@ -1276,7 +1276,44 @@ textarea {
   }
 
   .comparison-table {
-    min-width: 38rem;
+    min-width: 0;
+  }
+
+  .comparison-table,
+  .comparison-table tbody,
+  .comparison-table tr,
+  .comparison-table td,
+  .comparison-table th {
+    display: block;
+    width: 100%;
+  }
+
+  .comparison-table tr {
+    border-bottom: 1px solid #e8e1d7;
+  }
+
+  .comparison-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .comparison-table td,
+  .comparison-table th {
+    border-bottom: 0;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .comparison-table td:first-child,
+  .comparison-table th:first-child {
+    padding-bottom: 0.25rem;
+    font-weight: 700;
+    color: #3f3934;
+  }
+
+  .comparison-table td + td,
+  .comparison-table th + th,
+  .comparison-table th + td,
+  .comparison-table td + th {
+    padding-top: 0;
   }
 
   .v6-hero,

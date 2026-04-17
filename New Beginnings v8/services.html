@@ -43,7 +43,7 @@
 
     <main>
       <section class="section nb-page-intro">
-        <div class="container">
+        <div class="container" data-v8-cms="services.intro">
           <p class="section-kicker reveal">Wedding Planner</p>
           <h1 class="section-title reveal">Professional, certified wedding planning with a personal touch.</h1>
           <p class="section-lead reveal">One of our most important roles as your wedding consultant is the coordination and management of your selected wedding professionals. We are there every step of the way.</p>
@@ -51,7 +51,7 @@
       </section>
 
       <section class="section" style="padding-top:0;">
-        <div class="container grid grid-2 service-grid">
+        <div class="container grid grid-2 service-grid" data-v8-cms="services.offerings">
           <article class="card reveal">
             <h3>Wedding Day Coordination</h3>
             <p class="meta">This package is ideal for the bride and groom that have all planning and preparation complete, but want a stress free wedding day. You show up, say "I Do," and enjoy your special day while we handle details.</p>
@@ -107,7 +107,7 @@
           <figure class="reveal">
             <img src="images/aa49efa7-4492-4989-acf1-68c30ca64234.avif" alt="Corporate event reception">
           </figure>
-          <div class="feature-copy reveal">
+          <div class="feature-copy reveal" data-v8-cms="services.area">
             <p class="section-kicker">Service Area</p>
             <h3>Spokane, Coeur d'Alene, and surrounding Inland Northwest locations.</h3>
             <p class="meta">We have performed at Davenport Hotel, Beacon Hill, Glover Mansion, CenterPlace, Masonic Temple, Red Lion Inn, Mirabeau Park Hotel, Coeur d'Alene Resort, and numerous other locations.</p>
@@ -120,7 +120,7 @@
       </section>
 
       <section class="section" style="padding-top:0;">
-        <div class="container grid grid-2">
+        <div class="container grid grid-2" data-v8-cms="services.standards">
           <article class="card reveal">
             <p class="section-kicker">In Every Collection</p>
             <h2 class="section-title">Professional standards, every time.</h2>
@@ -144,9 +144,9 @@
 
       <section class="accent-band">
         <div class="container accent-band-inner reveal">
-          <p class="section-kicker">Need Pricing?</p>
-          <h2>View all-inclusive event packages and rates.</h2>
-          <p>Event times are true event times. Set up and tear down are not subtracted from your event time.</p>
+          <p class="section-kicker" data-v8-cms="services.cta.kicker">Need Pricing?</p>
+          <h2 data-v8-cms="services.cta.title">View all-inclusive event packages and rates.</h2>
+          <p data-v8-cms="services.cta.copy">Event times are true event times. Set up and tear down are not subtracted from your event time.</p>
           <div class="cta-actions">
             <a class="button button-secondary" href="pricing.html">View Pricing</a>
             <button class="button button-primary gbCheckDate" type="button">Check Availability</button>
@@ -190,6 +190,7 @@
     </footer>
   </div>
 
+  <script src="js/v8-cms.js?v=20260401a"></script>
   <script src="js/new-beginnings-djs-event-plann-f0631e.js?v=20260220v8a"></script>
 </body>
 </html>

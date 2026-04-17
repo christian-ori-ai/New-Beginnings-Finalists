@@ -43,7 +43,7 @@
 
     <main>
       <section class="section nb-page-intro">
-        <div class="container">
+        <div class="container" data-v8-cms="contact.intro">
           <p class="section-kicker reveal">Contact</p>
           <h1 class="section-title reveal">Thank you for your interest in New Beginnings DJ's.</h1>
           <p class="section-lead reveal">We've been creating a lifetime of memories for the once in a lifetime event since 1998.</p>
@@ -54,7 +54,7 @@
         <div class="container grid grid-2 contact-grid">
           <article class="contact-panel reveal">
             <h3>Inquiry Form</h3>
-            <p class="meta">Please share your event type, date, and location so we can guide you to the right package.</p>
+            <p class="meta" data-v8-cms="contact.inquiry.copy">Please share your event type, date, and location so we can guide you to the right package.</p>
             <form class="form-grid" style="margin-top:1rem;" action="#" method="post">
               <div class="form-row">
                 <div>
@@ -85,7 +85,7 @@
           <div class="grid" style="gap:1rem;">
             <article class="contact-panel reveal">
               <h3>Direct Contact</h3>
-              <ul class="contact-details">
+              <ul class="contact-details" data-v8-cms="contact.direct">
                 <li><strong>Phone:</strong> <a href="tel:+15092168776">509 216 8776</a></li>
                 <li><strong>Email:</strong> <a href="mailto:info@newbeginningsdjs.com">info@newbeginningsdjs.com</a></li>
                 <li><strong>Website:</strong> <a href="https://www.newbeginningsdjs.com/index.html" target="_blank" rel="noopener noreferrer">www.newbeginningsdjs.com</a></li>
@@ -95,7 +95,7 @@
 
             <article class="contact-panel reveal">
               <p class="section-kicker">Quick Links</p>
-              <div class="footer-links" style="margin-top:0.35rem;">
+              <div class="footer-links" style="margin-top:0.35rem;" data-v8-cms="contact.quicklinks">
                 <a href="services.html">Services</a>
                 <a href="pricing.html">Pricing</a>
                 <a href="gallery.html">Gallery</a>
@@ -108,7 +108,7 @@
       </section>
 
       <section class="section" style="padding-top:0;">
-        <div class="container grid grid-2">
+        <div class="container grid grid-2" data-v8-cms="contact.help">
           <article class="card reveal">
             <p class="section-kicker">Before You Submit</p>
             <h2 class="section-title">Helpful details to include</h2>
@@ -129,7 +129,7 @@
       </section>
 
       <section class="section" style="padding-top:0;">
-        <div class="container quote-band reveal">
+        <div class="container quote-band reveal" data-v8-cms="contact.quote">
           <p>"You definitely went above and beyond our expectations. We are looking forward to next year's party."</p>
           <small>Marlene, Company Event Client</small>
         </div>
@@ -137,9 +137,9 @@
 
       <section class="accent-band">
         <div class="container accent-band-inner reveal">
-          <p class="section-kicker">Month Day Year</p>
-          <h2>Check our availability now.</h2>
-          <p>Reserve your event date online, then we will follow up to confirm details and next steps.</p>
+          <p class="section-kicker" data-v8-cms="contact.cta.kicker">Month Day Year</p>
+          <h2 data-v8-cms="contact.cta.title">Check our availability now.</h2>
+          <p data-v8-cms="contact.cta.copy">Reserve your event date online, then we will follow up to confirm details and next steps.</p>
           <div class="cta-actions">
             <button class="button button-secondary gbCheckDate" type="button">Check Availability</button>
             <a class="button button-primary" href="tel:+15092168776">Call 509 216 8776</a>
@@ -183,6 +183,7 @@
     </footer>
   </div>
 
+  <script src="js/v8-cms.js?v=20260401a"></script>
   <script src="js/new-beginnings-djs-event-plann-f0631e.js?v=20260220v8a"></script>
 </body>
 </html>

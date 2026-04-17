@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>V8 Content Editor | New Beginnings</title>
+  <link rel="stylesheet" href="css/v8-editor.css?v=20260401a">
+</head>
+<body data-v8-editor="true">
+  <div class="editor-shell">
+    <header class="editor-topbar">
+      <div class="editor-branding">
+        <h1>V8 Content Editor</h1>
+        <p>Edit the main content sections for the v8 finalist site from one separate interface. Drafts save in this browser, and you can export publish-ready JSON when you want to make the changes live for everyone.</p>
+      </div>
+      <div class="editor-toolbar">
+        <button class="editor-button editor-button-primary" type="button" data-save-draft>Save Draft</button>
+        <button class="editor-button editor-button-secondary" type="button" data-copy-json>Copy Publish JSON</button>
+        <button class="editor-button editor-button-secondary" type="button" data-download-json>Download JSON</button>
+        <label class="editor-file-label">
+          Import JSON
+          <input type="file" accept="application/json" data-import-json>
+        </label>
+        <button class="editor-button editor-button-ghost" type="button" data-clear-draft>Clear Draft</button>
+      </div>
+    </header>
+
+    <main class="editor-layout">
+      <aside class="editor-sidebar">
+        <div class="editor-note">
+          <p>Best for copy, lists, captions, and section-level content changes. Open this editor through the local demo server or a hosted URL, not as a raw file, so the previews and page loading work correctly.</p>
+        </div>
+        <input class="editor-search" type="search" placeholder="Search sections..." data-editor-search>
+        <div class="editor-page-tabs" data-editor-page-tabs></div>
+        <div class="editor-fields" data-editor-fields></div>
+      </aside>
+
+      <section class="editor-preview-shell">
+        <div class="editor-preview-bar">
+          <div class="editor-preview-copy">
+            <h2 data-editor-page-label>Home</h2>
+            <p>Preview refreshes after you save the draft.</p>
+          </div>
+          <a class="editor-button editor-button-secondary" href="index.html" target="_blank" rel="noopener noreferrer" data-open-preview>Open Page</a>
+        </div>
+        <div class="editor-status" data-editor-status data-tone="neutral"></div>
+        <iframe class="editor-preview" title="V8 preview" data-editor-preview></iframe>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/v8-cms.js?v=20260401a"></script>
+  <script src="js/v8-editor.js?v=20260401a"></script>
+</body>
+</html>

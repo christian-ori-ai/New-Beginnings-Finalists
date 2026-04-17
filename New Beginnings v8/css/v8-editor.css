@@ -1,0 +1,334 @@
+:root {
+  --editor-bg: #f3eee8;
+  --editor-surface: #fffdfa;
+  --editor-surface-soft: #f7f2ec;
+  --editor-ink: #2f2723;
+  --editor-muted: #6a5e56;
+  --editor-brand: #7d657d;
+  --editor-brand-deep: #5d4b61;
+  --editor-line: #ddd1c5;
+  --editor-shadow: 0 18px 44px rgba(67, 54, 55, 0.08);
+  --editor-radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #faf5ef 0%, #f2ece5 100%);
+  color: var(--editor-ink);
+  font-family: "Manrope", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.editor-shell {
+  min-height: 100vh;
+}
+
+.editor-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(255, 251, 247, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(141, 121, 132, 0.16);
+}
+
+.editor-branding h1 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  line-height: 1;
+}
+
+.editor-branding p {
+  margin: 0.4rem 0 0;
+  max-width: 58ch;
+  color: var(--editor-muted);
+}
+
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.editor-button,
+.editor-file-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.85rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.8rem 1.1rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.editor-button:hover,
+.editor-file-label:hover {
+  transform: translateY(-1px);
+}
+
+.editor-button-primary {
+  background: var(--editor-brand-deep);
+  color: #fff;
+}
+
+.editor-button-secondary,
+.editor-file-label {
+  background: var(--editor-surface);
+  border-color: var(--editor-line);
+  color: var(--editor-brand-deep);
+}
+
+.editor-button-ghost {
+  background: transparent;
+  border-color: rgba(93, 75, 97, 0.18);
+  color: var(--editor-brand-deep);
+}
+
+.editor-file-label input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.editor-layout {
+  display: grid;
+  grid-template-columns: minmax(340px, 460px) minmax(0, 1fr);
+  gap: 1.4rem;
+  padding: 1.4rem;
+}
+
+.editor-sidebar,
+.editor-preview-shell {
+  background: rgba(255, 252, 248, 0.76);
+  border: 1px solid rgba(141, 121, 132, 0.16);
+  border-radius: var(--editor-radius);
+  box-shadow: var(--editor-shadow);
+}
+
+.editor-sidebar {
+  padding: 1rem;
+}
+
+.editor-note {
+  padding: 1rem 1.05rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f5eee7, #fcfaf7);
+  border: 1px solid rgba(141, 121, 132, 0.14);
+}
+
+.editor-note p {
+  margin: 0;
+  color: var(--editor-muted);
+}
+
+.editor-search {
+  width: 100%;
+  margin-top: 1rem;
+  border: 1px solid var(--editor-line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.9rem 1rem;
+  font: inherit;
+}
+
+.editor-page-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.editor-page-tab {
+  border: 1px solid var(--editor-line);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.72rem 0.95rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--editor-muted);
+}
+
+.editor-page-tab.is-active {
+  background: var(--editor-brand-deep);
+  border-color: var(--editor-brand-deep);
+  color: #fff;
+}
+
+.editor-fields {
+  display: grid;
+  gap: 0.95rem;
+  margin-top: 1rem;
+}
+
+.editor-card {
+  background: var(--editor-surface);
+  border: 1px solid rgba(141, 121, 132, 0.12);
+  border-radius: 16px;
+  padding: 0.95rem;
+}
+
+.editor-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.editor-card-title {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.editor-card-meta {
+  margin: 0.2rem 0 0;
+  color: var(--editor-muted);
+  font-size: 0.84rem;
+}
+
+.editor-inline-button {
+  border: 1px solid var(--editor-line);
+  border-radius: 999px;
+  background: transparent;
+  padding: 0.58rem 0.9rem;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--editor-brand-deep);
+}
+
+.editor-surface {
+  min-height: 10rem;
+  border: 1px solid var(--editor-line);
+  border-radius: 14px;
+  background: #fff;
+  padding: 1rem;
+  overflow: auto;
+  line-height: 1.65;
+}
+
+.editor-surface:focus {
+  outline: 2px solid rgba(125, 101, 125, 0.2);
+  border-color: rgba(125, 101, 125, 0.55);
+}
+
+.editor-surface :first-child {
+  margin-top: 0;
+}
+
+.editor-surface :last-child {
+  margin-bottom: 0;
+}
+
+.editor-preview-shell {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  min-height: calc(100vh - 8rem);
+}
+
+.editor-preview-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid rgba(141, 121, 132, 0.14);
+  background: linear-gradient(180deg, #fffdfa 0%, #f8f1ea 100%);
+}
+
+.editor-preview-copy h2 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.editor-preview-copy p {
+  margin: 0.25rem 0 0;
+  color: var(--editor-muted);
+}
+
+.editor-status {
+  padding: 0.8rem 1.1rem;
+  font-size: 0.92rem;
+  color: var(--editor-muted);
+  border-bottom: 1px solid rgba(141, 121, 132, 0.1);
+  background: rgba(255, 252, 248, 0.85);
+}
+
+.editor-status[data-tone="success"] {
+  color: #255b44;
+}
+
+.editor-status[data-tone="warning"] {
+  color: #8a5b15;
+}
+
+.editor-status[data-tone="error"] {
+  color: #8d2c2c;
+}
+
+.editor-preview {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #fff;
+}
+
+@media (max-width: 1100px) {
+  .editor-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .editor-preview-shell {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 720px) {
+  .editor-topbar {
+    padding: 1rem;
+  }
+
+  .editor-layout {
+    padding: 1rem;
+  }
+
+  .editor-toolbar {
+    width: 100%;
+  }
+
+  .editor-button,
+  .editor-file-label {
+    flex: 1 1 100%;
+  }
+}
