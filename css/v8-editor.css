@@ -46,6 +46,7 @@ a {
   gap: 1rem;
   padding: 1.2rem 1.5rem;
   background: rgba(255, 251, 247, 0.92);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(141, 121, 132, 0.16);
 }

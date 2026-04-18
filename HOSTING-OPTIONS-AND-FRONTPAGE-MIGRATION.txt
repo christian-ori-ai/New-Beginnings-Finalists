@@ -1,243 +1,172 @@
 NEW BEGINNINGS
 Hosting Options And FrontPage Migration Notes
 
-Created: 2026-04-01
+Updated: 2026-04-18
+
+Current business context
+- Current traffic is light: roughly 600 users per month.
+- Current bandwidth is also light: roughly 4 GB per year.
+- Current hosting cost is about $400 per year with iPower.
+- The current iPower subscription is expected to renew in June 2026, so any hosting decision needs to be made within roughly the next two months.
+- The client is willing to spend up to about $500 per year for a better overall experience.
+- The bigger decision is no longer raw hosting power. It is workflow: editing, reliability, SEO, customer management, and room to grow.
 
 Working assumption
 - The finalist demos in this repo are static HTML/CSS/JS sites.
-- That means they are a strong fit for modern static hosting.
-- I am assuming the current live site may still be edited or published from Microsoft FrontPage, and may still have old FrontPage-era hosting habits or dependencies.
+- A lightweight internal content editor already exists in this repo for page content changes, but it is not yet a full live CMS, booking system, payments system, or client portal.
+- The client currently uses Gigbuilder for some scheduling / client-event workflow. Meeting notes suggest this is around $39.99 per month. If that system is replaced internally, that budget can be redirected toward hosting and backend services.
 
 Short recommendation
-- Best simple path: GitHub Pages if the site is purely static and the team is comfortable with GitHub.
-- Best polished static-hosting path: Cloudflare Pages if you want strong CDN/DNS handling and easy custom-domain setup.
-- Best "marketing site" path with nicer non-developer tooling: Netlify.
-- Best if the client wants the most familiar old-school hosting model: traditional shared hosting with cPanel or similar, using SFTP or File Manager instead of FrontPage publishing.
+- Path 1 is the safest "keep costs stable" path: keep iPower, build an internal editor and admin workflow, and replace outside tools over time.
+- Path 2 is the cleanest "modernize the stack" path: move the site to Netlify and build the same internal tools on a more modern hosting workflow.
+- If the goal is simply to launch the new site quickly, either path can work.
+- If the goal is to gradually evolve into a custom booking / client portal product, Netlify is the cleaner foundation.
+- Because the renewal deadline is in June 2026, the realistic near-term decision is about hosting and launch readiness, not about completing every future feature before the renewal date.
 
-Why move away from FrontPage
-- FrontPage and FrontPage Server Extensions are legacy technology.
-- Microsoft documents that, as of December 18, 2010, FrontPage Server Extensions 2002 support for certain IIS 7-era installs was handled by Ready-to-Run Software rather than Microsoft.
-- Microsoft also documents that IIS web services can be disabled during upgrade when FrontPage Server Extensions are installed, because of security concerns around FrontPage metadata and related files.
-- Practical takeaway: it is safer to remove FrontPage-dependent publishing and features than to keep hunting for a host that still tolerates them.
+Timing constraint
+- As of 2026-04-18, there are only about 6 to 8 weeks to decide whether to keep iPower or move.
+- That is enough time to launch a redesigned static site and make a hosting change if needed.
+- That is probably not enough time to safely launch the full "perfect world" product in one pass if it includes admin tools, client logins, event records, notifications, and payments.
+- The best use of the next two months is to separate the hosting decision from the larger product roadmap.
 
-Hosting options
+The two real paths
 
-1. GitHub Pages
+1. Stay on iPower and build an internal UI editor
 Best for
-- A brochure-style site with no real backend.
-- A workflow where updates are made from the GitHub repo.
-- Lowest ongoing cost and simplest stack.
+- A lower-disruption launch.
+- A client who wants to keep the current host relationship.
+- A phased approach where the site goes live first and the richer tooling is added over time.
+
+Estimated cost
+- iPower hosting: about $400 per year.
+- Domain: usually already bundled separately or already paid.
+- If Gigbuilder is retired later, that may free up roughly $39.99 per month based on current meeting notes.
+- Total annual hosting spend stays near the current number unless extra SaaS tools are added.
+
+What this path can support
+- Website content editing through an internal editor.
+- Editable homepage / section content, images, pricing blocks, testimonials, and CTA copy.
+- Internal admin dashboard for staff.
+- Customer inquiry capture.
+- Custom availability request flow.
+- Event records for each client.
+- Client login for managing event details such as song choices, venue, timeline, guest count, and notes.
+- Online payments, if a payment provider such as Stripe is added.
 
 Pros
-- GitHub Pages is a static hosting service that publishes HTML, CSS, and JavaScript directly from a GitHub repository.
-- Custom domains are supported.
-- HTTPS is supported and can be enforced.
-- Good fit with the new top-level GitHub repo that now exists for this project.
+- Lowest change management for the client.
+- Keeps the current host and likely keeps the current DNS / registrar arrangement unchanged.
+- Avoids a full hosting migration while the business is still deciding how much custom functionality it wants.
+- Gives us room to build exactly the workflow they want instead of forcing their process into a third-party platform.
 
 Watch-outs
-- Static hosting only. No traditional server-side forms, databases, or FrontPage extensions.
-- If contact forms are needed, they should be routed through a third-party form service or a small serverless function elsewhere.
-- Best when one final site is chosen and published, rather than many variations at once.
+- iPower is fine for brochure-site hosting, but it is not the reason the client gets a better UI. We would be responsible for building that better UI ourselves.
+- Shared hosting environments can be less pleasant to manage for modern deployment workflows.
+- Reliability is acceptable for a small site, but modern deployment previews, rollbacks, and versioned releases are usually not as clean as on newer platforms.
+- If we build logins, event data, payments, or staff tools, we need to confirm what iPower supports well enough for the backend stack we choose.
+- If the future app becomes more substantial, we may eventually outgrow the "just stay on shared hosting" model and migrate anyway.
 
 My read
-- This is the cleanest hosting target if the chosen site stays mostly static and the team is comfortable with GitHub.
+- This is a good path if the client wants familiarity and minimum disruption.
+- It is less ideal if the custom portal becomes a meaningful product with authentication, structured event data, payments, and ongoing feature work.
 
-2. Cloudflare Pages
+2. Move to Netlify and build the internal tools there
 Best for
-- A static site with a custom domain and strong CDN performance.
-- A setup where DNS and website delivery are managed cleanly.
-- Teams that may want a little more room to grow later.
+- A modern static site with room to grow into a custom web app.
+- Cleaner deployment, easier rollbacks, previews, forms, and domain management.
+- A development workflow where we want a better foundation for future backend features.
 
-Pros
-- Cloudflare documents that static asset requests on Pages are free and unlimited on both free and paid plans.
-- Custom domains are supported.
-- For a subdomain, Cloudflare documents that a custom CNAME can point the subdomain to the Pages site.
-- Strong fit if the domain will eventually be managed in Cloudflare DNS anyway.
+Estimated cost
+- Netlify site hosting can start well below the current iPower spend.
+- Depending on plan and usage, the hosting layer could stay in the roughly $0 to $240 per year range before any add-on services.
+- Domain costs still apply separately if not already owned.
+- If Gigbuilder is retired, that budget can help cover auth, database, storage, email, payments, or scheduling services.
+- Real cost depends less on page hosting and more on which backend pieces we add.
 
-Watch-outs
-- For an apex domain, Cloudflare documents that the site must be added as a Cloudflare zone and nameservers configured to Cloudflare.
-- If the client wants to avoid nameserver changes right now, subdomain setup is simpler than apex setup.
-- Forms still need a replacement path if the current site depends on FrontPage form handling.
+What this path can support
+- Everything listed in Path 1.
+- Better deployment workflow with previews and simpler release management.
+- Serverless functions for custom form handling, availability checks, notifications, and API endpoints.
+- Integration with external services for authentication, database, storage, CRM, payments, and email.
+- A cleaner path toward a true client portal and internal admin tools.
 
-My read
-- Probably the strongest all-around modern hosting option for a static business site if the domain and DNS workflow are okay.
+Netlify strengths
+- Strong fit for static or mostly-static sites.
+- Easy deploys from Git, including previews before publishing.
+- Good custom domain and HTTPS workflow.
+- Friendlier for ongoing iteration than old-school shared hosting.
+- Easier foundation if we want to gradually introduce custom backend behavior.
 
-3. Netlify
-Best for
-- A static marketing site with a friendlier deployment and preview workflow.
-- Teams that want drag-and-drop or Git-based deploys.
-- Cases where form handling may be helpful without building custom backend code.
-
-Pros
-- Netlify's pricing page currently shows a free tier.
-- Netlify also lists custom domains with SSL on the free tier.
-- Netlify has a reputation for easy deploy previews and simple site management.
-- Netlify pricing also explicitly includes form submissions as a metered capability, which is relevant if a contact form is needed.
-
-Watch-outs
-- Usage is credit-based, so it is worth watching the billing model if traffic, forms, or serverless features grow.
-- Still not a FrontPage-compatible environment; any FrontPage-specific publishing or extensions need to be removed.
+Netlify limitations and caveats
+- Netlify is not an all-in-one business platform by itself.
+- It does not automatically give the client a booking calendar, CRM, payment system, or customer portal. Those still need to be built.
+- Authentication, structured event data, persistent storage, and payments generally require outside services or custom backend architecture.
+- Metered usage matters once forms, functions, bandwidth, image processing, or background features grow.
+- If the client wants a truly no-code admin experience, Netlify alone does not provide that. We would still need to build the admin UI.
 
 My read
-- Good middle ground if the client wants something more user-friendly than raw GitHub Pages.
+- Netlify is the better technical foundation if we are serious about building custom tools.
+- The tradeoff is that it modernizes hosting, but it does not reduce the need for backend product work. It just gives that work a better home.
 
-4. Vercel
-Best for
-- Teams that want polished previews, Git-based workflows, and room for more advanced frontend tooling later.
-- A site that might eventually become more app-like.
+Future-state capabilities to keep in view
 
-Pros
-- Vercel documents that its Hobby plan is free.
-- Vercel documents that the Hobby plan includes built-in CI/CD, automatic HTTPS/SSL, and preview deployments for every Git push.
-- Custom domains are supported and can be added to a project.
+If we build beyond a brochure site, both paths should be evaluated against this future feature set:
+- Website UI editing for the owners without touching raw code.
+- Media management for photos, hero images, logos, and testimonials.
+- Booking / availability workflow.
+- Event intake form with date, venue, guest count, planner needs, DJ needs, and package selection.
+- Client login to a single event dashboard.
+- Client-managed event details: song choices, must-play / do-not-play, venue notes, timeline, introductions, special dances, and guest count updates.
+- Staff-side event dashboard for internal notes and coordination.
+- Email and text notifications.
+- Contract acceptance and payments, if desired.
+- SEO controls: page titles, meta descriptions, image alt text, indexability, redirects, and analytics.
 
-Watch-outs
-- For a straightforward brochure site, this can be more platform than you actually need.
-- If the final site stays plain static HTML/CSS/JS, GitHub Pages or Cloudflare Pages may be simpler.
-- For a business site, plan fit should be checked carefully.
+Important architecture note
+- Hosting and "business app" are separate decisions.
+- A better host does not automatically create the admin experience the client wants.
+- If the long-term goal is a polished internal system, the real scope is:
+  site frontend + admin UI + authentication + database + notifications + optional payments + client portal.
 
-My read
-- A valid option, but not my first recommendation unless the team especially likes the Vercel workflow.
+What each path means for that future state
 
-5. Traditional shared hosting with cPanel or similar
-Best for
-- Clients who want a more familiar hosting account with a file manager, separate FTP/SFTP users, and email/web in the same general hosting relationship.
-- Teams that do not want a Git-centered workflow.
+Path 1: iPower + custom internal tools
+- Good if we want to launch quickly and add features carefully.
+- Better if we want to preserve the current hosting relationship for now.
+- More likely to feel transitional if the app becomes more complex.
 
-Pros
-- Closest mental model to the old FrontPage era: upload files, point a domain, manage through a hosting panel.
-- cPanel documents that website files can be managed through FTP accounts or File Manager.
-- This can be the easiest emotional transition for a non-technical client.
+Path 2: Netlify + custom internal tools
+- Better if we want the site and future app on a cleaner modern deployment workflow.
+- Better if we expect continuous iteration, previews, and releases.
+- Better base if the client eventually replaces Gigbuilder with a custom solution.
 
-Watch-outs
-- This should not be treated as "keep using FrontPage." It should be "host static files on a normal host."
-- cPanel support notes that raw FTP is disabled by default in newer installs because of its age and vulnerabilities, so SFTP or File Manager is preferable.
-- Quality varies a lot by hosting provider.
-- You still need to replace FrontPage-dependent features.
-
-My read
-- Best if the client strongly wants a traditional host dashboard and no Git-based workflow.
-
-Recommended host ranking for this project
-- 1. Cloudflare Pages
-- 2. GitHub Pages
-- 3. Netlify
-- 4. Traditional shared hosting with cPanel/SFTP
-- 5. Vercel
-
-Why that ranking
-- These finalist sites are static.
-- Static hosting is cheaper, simpler, safer, and easier to maintain than trying to preserve a FrontPage-era publishing model.
-- Cloudflare Pages and GitHub Pages are the cleanest fit for the technical shape of these demos.
-
-Migration steps from the current FrontPage setup
-
-Phase 1: Inventory the current live setup
-- Confirm who owns the domain registrar login.
-- Confirm who controls DNS today.
-- Confirm who has hosting access today.
-- Confirm whether email is tied to the current web host or hosted elsewhere.
-- Download a full backup of the current site before touching DNS or hosting.
-- Archive the current FrontPage source files and the published server copy separately.
-
-Phase 2: Identify FrontPage-specific dependencies
-Look for anything that depends on FrontPage Server Extensions or old IIS behavior:
-- Contact forms that email results through FrontPage extensions.
-- Search boxes powered by FrontPage search.
-- Guestbooks, discussion webs, hit counters, or old webbots.
-- Shared borders, navigation bots, includes, or auto-generated theme pieces.
-- Old `_vti_*` folders and metadata.
-- Any ASP, CGI, or old script behavior that a static host will not run.
-
-If any of those exist, replace them before cutover:
-- Forms: use a modern form service or small serverless/API endpoint.
-- Search: use a third-party search service or remove it if not needed.
-- Counters/guestbooks/discussion features: retire them unless there is a real business need.
-- Shared navigation/includes: replace with normal HTML, a template build step, or manual updates.
-
-Phase 3: Choose the new hosting model
-- If the final site is static and the team is okay with GitHub: choose GitHub Pages.
-- If the team wants stronger CDN and cleaner DNS handling: choose Cloudflare Pages.
-- If the client wants an easier non-developer publishing feel: choose Netlify.
-- If the client wants a classic host dashboard: choose shared hosting with cPanel/SFTP.
-
-Phase 4: Prepare the final site for launch
-- Pick the final design direction from the finalist demos.
-- Merge in any real business content, pricing, phone numbers, address details, and policy text.
-- Make sure image paths, favicon files, and internal links are final.
-- Make sure the mobile nav and contact links work on phones.
-- Decide how the contact form will work, or remove it until a replacement is ready.
-- Create a redirect map from old URLs to new URLs if the old site used different page names.
-
-Phase 5: Set up the new host
-- Create the project/account on the chosen host.
-- Connect the repo or upload the site files.
-- Test on the host's temporary URL first.
-- Confirm assets load correctly and there are no broken links.
-- Set the production branch or publish directory clearly.
-
-Phase 6: Connect the domain
-- Lower DNS TTL 24 to 48 hours before launch if possible.
-- Decide whether the main public URL should be `www.domain.com` or `domain.com`.
-- Point DNS to the new host.
-- Turn on or verify HTTPS.
-- Make sure apex-to-www or www-to-apex redirect behavior is correct.
-- Keep email DNS records unchanged unless email is also being migrated.
-
-Phase 7: Launch checks
-- Test the homepage and every main nav page.
-- Test on desktop and mobile.
-- Test phone, email, and availability links.
-- Test the contact form replacement.
-- Verify no mixed-content warnings on HTTPS.
-- Submit the site to Google Search Console and Bing Webmaster Tools if needed.
-- Reinstall analytics and any conversion tracking.
-
-Phase 8: Post-launch
-- Leave the old host active for at least a short overlap period if budget allows.
-- Keep a full backup of the old FrontPage-era site before cancellation.
-- Monitor for 404s, missing images, and form issues during the first week.
-- Document the new update workflow so nobody tries to publish from FrontPage again.
-
-Other migration items to consider
-- Domain verification and SSL ownership.
-- Redirect rules for old page names.
-- Privacy policy, cookie banner, and analytics compliance.
-- Accessibility pass on headings, contrast, alt text, and keyboard nav.
-- Image compression and page speed optimization.
-- A very clear ownership list for domain, DNS, hosting, repo, and analytics accounts.
-- A simple content update process for the client after launch.
+Suggested recommendation language for the client
+- Option 1: keep iPower and invest in a custom editing / client-management layer on top of the new site. This keeps hosting familiar and avoids a forced migration, while giving us room to replace Gigbuilder over time.
+- Option 2: move to Netlify and use it as the new hosting foundation for the redesigned site plus future custom tools. This is the more future-friendly technical path, but it still requires us to build the actual booking, login, and payment features.
 
 What I would do here
-- Choose one finalist as the production direction.
-- Host it on Cloudflare Pages or GitHub Pages.
-- Keep the domain at the current registrar unless there is a separate reason to move it.
-- Keep email where it is unless email is causing problems.
-- Replace any FrontPage-based forms with a modern form workflow.
-- Archive the old FrontPage environment, but do not rely on it going forward.
+- If the immediate priority is launching the redesigned site with minimal disruption: keep iPower for phase 1.
+- If the priority is setting up a cleaner long-term foundation for custom tools: move to Netlify.
+- If the client is open to a phased approach, the strongest sequence may be:
+  1. Launch the redesigned site.
+  2. Add the internal content editor and lead capture workflow.
+  3. Replace Gigbuilder only after the custom event dashboard is clearly scoped.
+  4. Add login, event management, and payments as later phases instead of forcing all of it into launch.
+- With the June 2026 renewal window in mind, my practical recommendation would be:
+  1. Make the hosting decision first.
+  2. Treat the first two months as a launch / migration window.
+  3. Do not tie the renewal decision to a requirement that the full custom portal must also be finished by then.
+  4. If there is any uncertainty about completing a clean Netlify migration in time, renew iPower for one more term and build phase 1 without schedule pressure.
 
-Sources used
-- GitHub Pages overview:
-  https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages
-- GitHub Pages custom domains:
-  https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages
-- GitHub Pages HTTPS:
-  https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https
-- Netlify pricing:
-  https://www.netlify.com/pricing/
-- Cloudflare Pages pricing:
-  https://developers.cloudflare.com/pages/functions/pricing/
-- Cloudflare Pages custom domains:
-  https://developers.cloudflare.com/pages/configuration/custom-domains/
-- Vercel plans:
-  https://vercel.com/docs/plans
-- Vercel custom domain setup:
-  https://vercel.com/docs/domains/set-up-custom-domain
-- Microsoft FrontPage Server Extensions on IIS 7:
-  https://learn.microsoft.com/en-us/iis/publish/frontpage-server-extensions/installing-the-frontpage-server-extensions-on-iis
-- Microsoft upgrade issues with FrontPage Server Extensions:
-  https://learn.microsoft.com/en-us/iis/publish/frontpage-server-extensions/upgrade-issues-with-frontpage-server-extensions
-- cPanel FTP accounts:
-  https://docs.cpanel.net/cpanel/files/ftp-accounts/
-- cPanel note on FTP being disabled by default in newer installs:
-  https://support.cpanel.net/hc/en-us/articles/360053898773-How-do-I-enable-FTP-for-my-server-and-users
+Practical next-step questions
+- Is the business emotionally attached to staying on iPower, or do they mainly care about ease of use?
+- Do they want us to replace Gigbuilder soon, or only keep that possibility open?
+- Do they need online payments in phase 1, or is inquiry + follow-up enough for now?
+- Do they want staff-only editing first, or true client logins in the first release?
+- Is email currently tied to iPower, and would moving hosting create any email risk?
+
+Bottom line
+- If this stays mostly a marketing site with a custom editor, iPower is workable.
+- If this is heading toward a custom booking and client-management platform, Netlify is the better long-term host foundation.
+- In either case, the major value will come from the internal tools we build, not from the hosting provider alone.
+- The June 2026 renewal deadline makes a phased plan even more important: choose the host now, launch the redesigned site next, and treat the richer booking / login / payment system as a follow-on product phase unless the scope is intentionally kept very small.
