@@ -764,6 +764,17 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
+.nb-rose .site-footer a.footer-developer-link {
+  color: var(--rose-accent-deep) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(203, 184, 206, 0.72) !important;
+  box-shadow: 0 10px 22px rgba(22, 16, 23, 0.18);
+}
+
+.nb-rose .site-footer a.footer-developer-link:hover {
+  background: #f8eff8 !important;
+}
+
 .nb-rose .footer-bottom {
   border-top-color: rgba(255, 255, 255, 0.28);
 }

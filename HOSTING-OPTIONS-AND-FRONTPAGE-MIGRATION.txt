@@ -3,6 +3,11 @@ Hosting Options And FrontPage Migration Notes
 
 Updated: 2026-04-18
 
+Pricing note
+- Any vendor pricing mentioned below should be treated as a planning estimate, not a guarantee.
+- The iPower number reflects the current client understanding / invoice history.
+- The Netlify range below is based on public plan pricing reviewed on 2026-04-18 and should be rechecked before purchase.
+
 Current business context
 - Current traffic is light: roughly 600 users per month.
 - Current bandwidth is also light: roughly 4 GB per year.
@@ -78,7 +83,7 @@ Best for
 
 Estimated cost
 - Netlify site hosting can start well below the current iPower spend.
-- Depending on plan and usage, the hosting layer could stay in the roughly $0 to $240 per year range before any add-on services.
+- Based on public pricing reviewed on 2026-04-18, a realistic planning range for site hosting alone is roughly $0 to $240 per year before add-on services and overage-related usage.
 - Domain costs still apply separately if not already owned.
 - If Gigbuilder is retired, that budget can help cover auth, database, storage, email, payments, or scheduling services.
 - Real cost depends less on page hosting and more on which backend pieces we add.
@@ -143,6 +148,12 @@ Path 2: Netlify + custom internal tools
 Suggested recommendation language for the client
 - Option 1: keep iPower and invest in a custom editing / client-management layer on top of the new site. This keeps hosting familiar and avoids a forced migration, while giving us room to replace Gigbuilder over time.
 - Option 2: move to Netlify and use it as the new hosting foundation for the redesigned site plus future custom tools. This is the more future-friendly technical path, but it still requires us to build the actual booking, login, and payment features.
+
+What I would say out loud in a client meeting
+- Hosting choice does matter, but it is not the same thing as choosing the future business system.
+- If you want the least disruption before the June renewal, stay on iPower for phase 1 and launch the redesigned site there.
+- If you want the cleaner long-term foundation for custom admin tools and future client login work, move to Netlify.
+- Either way, the real project value comes from the editing workflow, client management tools, and phased roadmap, not from the host by itself.
 
 What I would do here
 - If the immediate priority is launching the redesigned site with minimal disruption: keep iPower for phase 1.

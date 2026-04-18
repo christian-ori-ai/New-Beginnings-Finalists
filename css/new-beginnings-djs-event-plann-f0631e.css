@@ -748,6 +748,14 @@ textarea {
   color: #fff;
 }
 
+.footer-developer-link,
+a.footer-developer-link {
+  margin-top: 1rem;
+  padding: 0.72rem 1rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.13em;
+}
+
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
