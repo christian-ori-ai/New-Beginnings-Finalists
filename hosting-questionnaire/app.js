@@ -18,6 +18,103 @@
   var downloadButton = document.getElementById("download-json");
   var modeNodes = document.querySelectorAll("[data-submission-mode]");
   var helpNode = document.querySelector("[data-submission-help]");
+  var gateRoot = document.getElementById("access-gate");
+  var gateForm = document.getElementById("access-gate-form");
+  var gatePassword = document.getElementById("access-password");
+  var gateStatus = document.getElementById("access-gate-status");
+  var gateSubmitButton = document.getElementById("access-gate-submit");
+  var appRoot = document.getElementById("questionnaire-app");
+  var ACCESS_STORAGE_KEY = "nbhq-access-v1";
+  var ACCESS_HASH = "1fbbc599268d71369c304a2746aec3e60af958af23630dd25c83eb325fc531be";
+  var ACCESS_FALLBACK = "anVzdG1hcnJpZWRpbnNwb2thbmU=";
+
+  function setGateStatus(message, tone) {
+    if (!gateStatus) return;
+    gateStatus.textContent = message;
+    gateStatus.dataset.tone = tone || "neutral";
+    gateStatus.classList.add("is-visible");
+  }
+
+  function setGateBusyState(isBusy) {
+    if (!gateSubmitButton) return;
+    gateSubmitButton.disabled = isBusy;
+    gateSubmitButton.textContent = isBusy ? "Checking..." : "Enter Questionnaire";
+  }
+
+  function setAccessState(isUnlocked) {
+    if (gateRoot) gateRoot.hidden = isUnlocked;
+    if (appRoot) appRoot.hidden = !isUnlocked;
+    document.body.classList.toggle("is-questionnaire-unlocked", isUnlocked);
+    document.body.classList.toggle("is-questionnaire-locked", !isUnlocked);
+  }
+
+  function hasStoredAccess() {
+    try {
+      return sessionStorage.getItem(ACCESS_STORAGE_KEY) === ACCESS_HASH;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function storeAccess() {
+    try {
+      sessionStorage.setItem(ACCESS_STORAGE_KEY, ACCESS_HASH);
+    } catch (error) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function hashValue(value) {
+    if (!window.crypto || !window.crypto.subtle || !window.TextEncoder) {
+      return Promise.resolve(value === window.atob(ACCESS_FALLBACK) ? ACCESS_HASH : "");
+    }
+
+    return window.crypto.subtle.digest("SHA-256", new TextEncoder().encode(value)).then(function (buffer) {
+      return Array.prototype.map.call(new Uint8Array(buffer), function (byte) {
+        return byte.toString(16).padStart(2, "0");
+      }).join("");
+    });
+  }
+
+  function unlockQuestionnaire() {
+    storeAccess();
+    setAccessState(true);
+    if (gatePassword) gatePassword.value = "";
+    if (form && form.elements.contactName) {
+      form.elements.contactName.focus();
+    }
+  }
+
+  function handleGateSubmit(event) {
+    event.preventDefault();
+
+    if (!gatePassword) return;
+
+    var candidate = String(gatePassword.value || "").trim();
+    if (!candidate) {
+      setGateStatus("Enter the shared password to continue.", "warning");
+      gatePassword.focus();
+      return;
+    }
+
+    setGateBusyState(true);
+
+    hashValue(candidate).then(function (hash) {
+      if (hash === ACCESS_HASH) {
+        unlockQuestionnaire();
+        return;
+      }
+
+      setGateStatus("That password is not correct. Please try again.", "warning");
+      gatePassword.select();
+    }).catch(function (error) {
+      setGateStatus(error.message || "This browser could not verify the password.", "warning");
+    }).finally(function () {
+      setGateBusyState(false);
+    });
+  }
 
   function setModeCopy() {
     var modeLabel = "Email draft";
@@ -263,6 +360,17 @@
   }
 
   if (!form) return;
+
+  if (gateForm) {
+    gateForm.addEventListener("submit", handleGateSubmit);
+    if (hasStoredAccess()) {
+      unlockQuestionnaire();
+    } else {
+      setAccessState(false);
+      setGateStatus("Enter the shared password to continue.", "neutral");
+      if (gatePassword) gatePassword.focus();
+    }
+  }
 
   setModeCopy();
   setStatus("Ready for responses. Submit will use the configured delivery mode shown above.", "neutral");

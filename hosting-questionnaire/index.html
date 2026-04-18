@@ -3,229 +3,284 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NB Hosting Questionnaire</title>
+  <title>Contact the Developer | Ori Intake</title>
   <meta name="description" content="A responsive hosting and roadmap questionnaire for New Beginnings.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="background-glow" aria-hidden="true"></div>
   <div class="page-shell">
-    <header class="hero">
-      <p class="eyebrow">New Beginnings</p>
-      <h1>Hosting And Roadmap Questionnaire</h1>
-      <p class="hero-copy">
-        This form helps us understand what matters most before the June hosting renewal:
-        editing experience, reliability, SEO, timeline, client tools, and how ambitious the
-        first release should be.
-      </p>
-      <div class="hero-meta">
-        <div class="meta-card">
-          <span class="meta-label">Designed for</span>
-          <strong>Mobile and Desktop</strong>
-        </div>
-        <div class="meta-card">
-          <span class="meta-label">Default Delivery</span>
-          <strong data-submission-mode>Loading...</strong>
-        </div>
+    <header class="page-topbar">
+      <div class="page-topbar-copy">
+        <span class="page-topbar-label">Ori Intake</span>
+        <span class="page-topbar-pill">Private Link</span>
+        <span class="page-topbar-pill">Mobile Ready</span>
       </div>
+      <div class="page-topbar-accent" aria-hidden="true"></div>
     </header>
 
-    <main class="content-grid">
-      <aside class="sidebar-card">
-        <h2>What We Are Solving For</h2>
-        <ul class="sidebar-list">
-          <li>How important it is to keep iPower vs move hosts now</li>
-          <li>What deserves the most attention in phase 1</li>
-          <li>How much custom tooling should happen before June</li>
-          <li>Whether Gigbuilder should stay, go, or be replaced later</li>
-          <li>What the ideal future client experience should include</li>
-        </ul>
-        <div class="note-block">
-          <strong>Submission note</strong>
-          <p data-submission-help>
-            This questionnaire is designed to work on GitHub Pages and submit through an email
-            draft to christian@ori-ai.dev. That keeps the workflow simple for respondents and
-            avoids needing a separate account or portal.
-          </p>
+    <section class="access-gate" id="access-gate">
+      <div class="gate-accent" aria-hidden="true"></div>
+      <p class="eyebrow">Private Access</p>
+      <h1>Contact the Developer</h1>
+      <p class="hero-copy">
+        This intake is meant for invited collaborators only. Enter the shared password to open the
+        hosting and roadmap questionnaire.
+      </p>
+      <div class="hero-meta gate-meta">
+        <div class="meta-card">
+          <span class="meta-label">Experience</span>
+          <strong>Soft front-door gate</strong>
         </div>
-      </aside>
-
-      <form class="questionnaire-card" id="questionnaire-form" novalidate>
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="section-kicker">Section 1</p>
-            <h2>Contact And Follow-Up</h2>
-          </div>
-          <div class="field-grid field-grid-2">
-            <label class="field">
-              <span>Name</span>
-              <input type="text" name="contactName" placeholder="Full name" required>
-            </label>
-            <label class="field">
-              <span>Role</span>
-              <input type="text" name="contactRole" placeholder="Owner, planner, DJ, etc.">
-            </label>
-            <label class="field">
-              <span>Email</span>
-              <input type="email" name="contactEmail" placeholder="name@example.com" required>
-            </label>
-            <label class="field">
-              <span>Phone</span>
-              <input type="tel" name="contactPhone" placeholder="Optional">
-            </label>
-          </div>
-          <fieldset class="option-group">
-            <legend>Preferred follow-up</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="radio" name="followUpPreference" value="Email" checked><span>Email</span></label>
-              <label class="choice-pill"><input type="radio" name="followUpPreference" value="Phone"><span>Phone</span></label>
-              <label class="choice-pill"><input type="radio" name="followUpPreference" value="Either"><span>Either is fine</span></label>
-            </div>
-          </fieldset>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="section-kicker">Section 2</p>
-            <h2>Top Priorities</h2>
-          </div>
-          <fieldset class="option-group">
-            <legend>What matters most right now?</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Ease of use for owners"><span>Ease of use for owners</span></label>
-              <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Reliable uptime"><span>Reliable uptime</span></label>
-              <label class="choice-pill"><input type="checkbox" name="topPriorities" value="SEO and discoverability"><span>SEO and discoverability</span></label>
-              <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Fast content changes"><span>Fast content changes</span></label>
-              <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Keeping current costs stable"><span>Keeping current costs stable</span></label>
-              <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Booking and client workflow"><span>Booking and client workflow</span></label>
-              <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Reducing dependence on outside tools"><span>Reducing outside tools</span></label>
-              <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Better mobile experience"><span>Better mobile experience</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="option-group">
-            <legend>Where would you like the most attention first?</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="radio" name="attentionArea" value="Website design and content polish" checked><span>Website design and content polish</span></label>
-              <label class="choice-pill"><input type="radio" name="attentionArea" value="Inquiry and lead capture flow"><span>Inquiry and lead capture flow</span></label>
-              <label class="choice-pill"><input type="radio" name="attentionArea" value="Owner editing tools"><span>Owner editing tools</span></label>
-              <label class="choice-pill"><input type="radio" name="attentionArea" value="Booking and availability workflow"><span>Booking and availability workflow</span></label>
-              <label class="choice-pill"><input type="radio" name="attentionArea" value="Client login and event dashboard"><span>Client login and event dashboard</span></label>
-              <label class="choice-pill"><input type="radio" name="attentionArea" value="Payments and contracts"><span>Payments and contracts</span></label>
-            </div>
-          </fieldset>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="section-kicker">Section 3</p>
-            <h2>Timing And Change Comfort</h2>
-          </div>
-          <fieldset class="option-group">
-            <legend>How urgent is the hosting decision?</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="radio" name="hostingUrgency" value="Need a clear recommendation in the next 1 to 2 weeks" checked><span>Need a decision in 1 to 2 weeks</span></label>
-              <label class="choice-pill"><input type="radio" name="hostingUrgency" value="Need a decision by late May"><span>Need a decision by late May</span></label>
-              <label class="choice-pill"><input type="radio" name="hostingUrgency" value="Need a decision before the June renewal"><span>Need a decision before June renewal</span></label>
-              <label class="choice-pill"><input type="radio" name="hostingUrgency" value="No hard preference yet"><span>No hard preference yet</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="option-group">
-            <legend>What launch approach feels right?</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="radio" name="launchApproach" value="Launch the redesigned site before renewal and phase the rest later" checked><span>Launch site first, phase the rest later</span></label>
-              <label class="choice-pill"><input type="radio" name="launchApproach" value="Launch the site and lightweight editor before renewal"><span>Launch site and editor before renewal</span></label>
-              <label class="choice-pill"><input type="radio" name="launchApproach" value="Try to replace more tooling before renewal"><span>Replace more tooling before renewal</span></label>
-              <label class="choice-pill"><input type="radio" name="launchApproach" value="Keep current setup for now and plan a larger phase 2"><span>Keep current setup and plan phase 2</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="option-group">
-            <legend>How comfortable are you with moving away from iPower now?</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="radio" name="hostingChangeComfort" value="Very comfortable if it gives us a better foundation"><span>Very comfortable</span></label>
-              <label class="choice-pill"><input type="radio" name="hostingChangeComfort" value="Open to it if the migration risk is low" checked><span>Open if risk is low</span></label>
-              <label class="choice-pill"><input type="radio" name="hostingChangeComfort" value="Would rather avoid a host change before June"><span>Would rather avoid it before June</span></label>
-              <label class="choice-pill"><input type="radio" name="hostingChangeComfort" value="Not sure yet"><span>Not sure yet</span></label>
-            </div>
-          </fieldset>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="section-kicker">Section 4</p>
-            <h2>Tools And Feature Scope</h2>
-          </div>
-          <fieldset class="option-group">
-            <legend>How should Gigbuilder be treated?</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="radio" name="gigbuilderPlan" value="Keep it for now and revisit later" checked><span>Keep it for now</span></label>
-              <label class="choice-pill"><input type="radio" name="gigbuilderPlan" value="Replace it gradually with custom tools"><span>Replace it gradually</span></label>
-              <label class="choice-pill"><input type="radio" name="gigbuilderPlan" value="Replace it as soon as possible"><span>Replace it ASAP</span></label>
-              <label class="choice-pill"><input type="radio" name="gigbuilderPlan" value="Still deciding"><span>Still deciding</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="option-group">
-            <legend>Which features should be part of phase 1?</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Site launch on final design"><span>Site launch on final design</span></label>
-              <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Owner content editor"><span>Owner content editor</span></label>
-              <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Inquiry form and lead capture"><span>Inquiry form and lead capture</span></label>
-              <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Availability request workflow"><span>Availability request workflow</span></label>
-              <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Basic SEO setup"><span>Basic SEO setup</span></label>
-              <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Analytics and tracking"><span>Analytics and tracking</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="option-group">
-            <legend>Which future features matter most after launch?</legend>
-            <div class="choice-grid">
-              <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Client login to event dashboard"><span>Client login to event dashboard</span></label>
-              <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Song selection and event planning tools"><span>Song selection and planning tools</span></label>
-              <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Venue, guest count, and timeline management"><span>Venue, guest count, and timeline management</span></label>
-              <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Payments and contracts"><span>Payments and contracts</span></label>
-              <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Internal staff dashboard"><span>Internal staff dashboard</span></label>
-              <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Automated reminders and notifications"><span>Automated reminders and notifications</span></label>
-            </div>
-          </fieldset>
-        </section>
-
-        <section class="section-block">
-          <div class="section-heading">
-            <p class="section-kicker">Section 5</p>
-            <h2>Open Notes</h2>
-          </div>
-          <div class="field-grid">
-            <label class="field">
-              <span>What would make this project feel like a win?</span>
-              <textarea name="successDefinition" rows="5" placeholder="Share what success looks like from your point of view."></textarea>
-            </label>
-            <label class="field">
-              <span>What concerns or risks are top of mind?</span>
-              <textarea name="topConcerns" rows="5" placeholder="Budget, timelines, complexity, SEO, training, migration risk, etc."></textarea>
-            </label>
-            <label class="field">
-              <span>Anything else we should know before recommending a path?</span>
-              <textarea name="additionalNotes" rows="5" placeholder="Anything not covered above."></textarea>
-            </label>
-          </div>
-        </section>
-
-        <section class="action-block">
-          <div class="status-banner" id="status-banner" role="status" aria-live="polite"></div>
-          <div class="action-row">
-            <button class="button button-primary" type="submit">Submit Responses</button>
-            <button class="button button-secondary" type="button" id="copy-summary">Copy Summary</button>
-            <button class="button button-ghost" type="button" id="download-json">Download JSON</button>
-          </div>
-          <p class="footnote">
-            Submit opens an email draft to <strong>christian@ori-ai.dev</strong> with a structured
-            summary and also keeps a local JSON copy available.
-          </p>
-        </section>
+        <div class="meta-card">
+          <span class="meta-label">Access style</span>
+          <strong>Session unlock</strong>
+        </div>
+      </div>
+      <form class="access-form" id="access-gate-form" novalidate>
+        <label class="field">
+          <span>Password</span>
+          <input
+            id="access-password"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Enter the shared password"
+            required
+          >
+        </label>
+        <div class="status-banner" id="access-gate-status" role="status" aria-live="polite"></div>
+        <div class="action-row">
+          <button class="button button-primary" id="access-gate-submit" type="submit">Enter Questionnaire</button>
+        </div>
       </form>
-    </main>
+      <p class="gate-note">
+        This is a lightweight front-end gate intended to keep the page private for invited people,
+        not a full backend security system.
+      </p>
+    </section>
+
+    <div class="questionnaire-app" id="questionnaire-app" hidden>
+      <header class="hero">
+        <div class="hero-badge-row">
+          <p class="eyebrow">New Beginnings</p>
+          <span class="hero-chip">Private intake</span>
+        </div>
+        <h1>Hosting And Roadmap Questionnaire</h1>
+        <p class="hero-copy">
+          This form helps me understand what matters most before the June hosting renewal:
+          editing experience, reliability, SEO, timeline, client tools, and how ambitious the
+          first release should be.
+        </p>
+        <div class="hero-meta">
+          <div class="meta-card">
+            <span class="meta-label">Designed for</span>
+            <strong>Mobile and Desktop</strong>
+          </div>
+          <div class="meta-card">
+            <span class="meta-label">Default Delivery</span>
+            <strong data-submission-mode>Loading...</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <aside class="sidebar-card">
+          <h2>What We Are Solving For</h2>
+          <ul class="sidebar-list">
+            <li>How important it is to keep iPower vs move hosts now</li>
+            <li>What deserves the most attention in phase 1</li>
+            <li>How much custom tooling should happen before June</li>
+            <li>Whether Gigbuilder should stay, go, or be replaced later</li>
+            <li>What the ideal future client experience should include</li>
+          </ul>
+          <div class="note-block">
+            <strong>Submission note</strong>
+            <p data-submission-help>
+              This questionnaire is designed to work on GitHub Pages and submit through an email
+              draft to christian@ori-ai.dev. That keeps the workflow simple for respondents and
+              avoids needing a separate account or portal.
+            </p>
+          </div>
+        </aside>
+
+        <form class="questionnaire-card" id="questionnaire-form" novalidate>
+          <section class="section-block">
+            <div class="section-heading">
+              <p class="section-kicker">Section 1</p>
+              <h2>Contact And Follow-Up</h2>
+            </div>
+            <div class="field-grid field-grid-2">
+              <label class="field">
+                <span>Name</span>
+                <input type="text" name="contactName" placeholder="Full name" required>
+              </label>
+              <label class="field">
+                <span>Role</span>
+                <input type="text" name="contactRole" placeholder="Owner, planner, DJ, etc.">
+              </label>
+              <label class="field">
+                <span>Email</span>
+                <input type="email" name="contactEmail" placeholder="name@example.com" required>
+              </label>
+              <label class="field">
+                <span>Phone</span>
+                <input type="tel" name="contactPhone" placeholder="Optional">
+              </label>
+            </div>
+            <fieldset class="option-group">
+              <legend>Preferred follow-up</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="radio" name="followUpPreference" value="Email" checked><span>Email</span></label>
+                <label class="choice-pill"><input type="radio" name="followUpPreference" value="Phone"><span>Phone</span></label>
+                <label class="choice-pill"><input type="radio" name="followUpPreference" value="Either"><span>Either is fine</span></label>
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="section-block">
+            <div class="section-heading">
+              <p class="section-kicker">Section 2</p>
+              <h2>Top Priorities</h2>
+            </div>
+            <fieldset class="option-group">
+              <legend>What matters most right now?</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Ease of use for owners"><span>Ease of use for owners</span></label>
+                <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Reliable uptime"><span>Reliable uptime</span></label>
+                <label class="choice-pill"><input type="checkbox" name="topPriorities" value="SEO and discoverability"><span>SEO and discoverability</span></label>
+                <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Fast content changes"><span>Fast content changes</span></label>
+                <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Keeping current costs stable"><span>Keeping current costs stable</span></label>
+                <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Booking and client workflow"><span>Booking and client workflow</span></label>
+                <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Reducing dependence on outside tools"><span>Reducing outside tools</span></label>
+                <label class="choice-pill"><input type="checkbox" name="topPriorities" value="Better mobile experience"><span>Better mobile experience</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="option-group">
+              <legend>Where would you like the most attention first?</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="radio" name="attentionArea" value="Website design and content polish" checked><span>Website design and content polish</span></label>
+                <label class="choice-pill"><input type="radio" name="attentionArea" value="Inquiry and lead capture flow"><span>Inquiry and lead capture flow</span></label>
+                <label class="choice-pill"><input type="radio" name="attentionArea" value="Owner editing tools"><span>Owner editing tools</span></label>
+                <label class="choice-pill"><input type="radio" name="attentionArea" value="Booking and availability workflow"><span>Booking and availability workflow</span></label>
+                <label class="choice-pill"><input type="radio" name="attentionArea" value="Client login and event dashboard"><span>Client login and event dashboard</span></label>
+                <label class="choice-pill"><input type="radio" name="attentionArea" value="Payments and contracts"><span>Payments and contracts</span></label>
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="section-block">
+            <div class="section-heading">
+              <p class="section-kicker">Section 3</p>
+              <h2>Timing And Change Comfort</h2>
+            </div>
+            <fieldset class="option-group">
+              <legend>How urgent is the hosting decision?</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="radio" name="hostingUrgency" value="Need a clear recommendation in the next 1 to 2 weeks" checked><span>Need a decision in 1 to 2 weeks</span></label>
+                <label class="choice-pill"><input type="radio" name="hostingUrgency" value="Need a decision by late May"><span>Need a decision by late May</span></label>
+                <label class="choice-pill"><input type="radio" name="hostingUrgency" value="Need a decision before the June renewal"><span>Need a decision before June renewal</span></label>
+                <label class="choice-pill"><input type="radio" name="hostingUrgency" value="No hard preference yet"><span>No hard preference yet</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="option-group">
+              <legend>What launch approach feels right?</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="radio" name="launchApproach" value="Launch the redesigned site before renewal and phase the rest later" checked><span>Launch site first, phase the rest later</span></label>
+                <label class="choice-pill"><input type="radio" name="launchApproach" value="Launch the site and lightweight editor before renewal"><span>Launch site and editor before renewal</span></label>
+                <label class="choice-pill"><input type="radio" name="launchApproach" value="Try to replace more tooling before renewal"><span>Replace more tooling before renewal</span></label>
+                <label class="choice-pill"><input type="radio" name="launchApproach" value="Keep current setup for now and plan a larger phase 2"><span>Keep current setup and plan phase 2</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="option-group">
+              <legend>How comfortable are you with moving away from iPower now?</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="radio" name="hostingChangeComfort" value="Very comfortable if it gives us a better foundation"><span>Very comfortable</span></label>
+                <label class="choice-pill"><input type="radio" name="hostingChangeComfort" value="Open to it if the migration risk is low" checked><span>Open if risk is low</span></label>
+                <label class="choice-pill"><input type="radio" name="hostingChangeComfort" value="Would rather avoid a host change before June"><span>Would rather avoid it before June</span></label>
+                <label class="choice-pill"><input type="radio" name="hostingChangeComfort" value="Not sure yet"><span>Not sure yet</span></label>
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="section-block">
+            <div class="section-heading">
+              <p class="section-kicker">Section 4</p>
+              <h2>Tools And Feature Scope</h2>
+            </div>
+            <fieldset class="option-group">
+              <legend>How should Gigbuilder be treated?</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="radio" name="gigbuilderPlan" value="Keep it for now and revisit later" checked><span>Keep it for now</span></label>
+                <label class="choice-pill"><input type="radio" name="gigbuilderPlan" value="Replace it gradually with custom tools"><span>Replace it gradually</span></label>
+                <label class="choice-pill"><input type="radio" name="gigbuilderPlan" value="Replace it as soon as possible"><span>Replace it ASAP</span></label>
+                <label class="choice-pill"><input type="radio" name="gigbuilderPlan" value="Still deciding"><span>Still deciding</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="option-group">
+              <legend>Which features should be part of phase 1?</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Site launch on final design"><span>Site launch on final design</span></label>
+                <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Owner content editor"><span>Owner content editor</span></label>
+                <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Inquiry form and lead capture"><span>Inquiry form and lead capture</span></label>
+                <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Availability request workflow"><span>Availability request workflow</span></label>
+                <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Basic SEO setup"><span>Basic SEO setup</span></label>
+                <label class="choice-pill"><input type="checkbox" name="phaseOneFeatures" value="Analytics and tracking"><span>Analytics and tracking</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="option-group">
+              <legend>Which future features matter most after launch?</legend>
+              <div class="choice-grid">
+                <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Client login to event dashboard"><span>Client login to event dashboard</span></label>
+                <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Song selection and event planning tools"><span>Song selection and planning tools</span></label>
+                <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Venue, guest count, and timeline management"><span>Venue, guest count, and timeline management</span></label>
+                <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Payments and contracts"><span>Payments and contracts</span></label>
+                <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Internal staff dashboard"><span>Internal staff dashboard</span></label>
+                <label class="choice-pill"><input type="checkbox" name="futureFeatures" value="Automated reminders and notifications"><span>Automated reminders and notifications</span></label>
+              </div>
+            </fieldset>
+          </section>
+
+          <section class="section-block">
+            <div class="section-heading">
+              <p class="section-kicker">Section 5</p>
+              <h2>Open Notes</h2>
+            </div>
+            <div class="field-grid">
+              <label class="field">
+                <span>What would make this project feel like a win?</span>
+                <textarea name="successDefinition" rows="5" placeholder="Share what success looks like from your point of view."></textarea>
+              </label>
+              <label class="field">
+                <span>What concerns or risks are top of mind?</span>
+                <textarea name="topConcerns" rows="5" placeholder="Budget, timelines, complexity, SEO, training, migration risk, etc."></textarea>
+              </label>
+              <label class="field">
+                <span>Anything else we should know before recommending a path?</span>
+                <textarea name="additionalNotes" rows="5" placeholder="Anything not covered above."></textarea>
+              </label>
+            </div>
+          </section>
+
+          <section class="action-block">
+            <div class="status-banner" id="status-banner" role="status" aria-live="polite"></div>
+            <div class="action-row">
+              <button class="button button-primary" type="submit">Submit Responses</button>
+              <button class="button button-secondary" type="button" id="copy-summary">Copy Summary</button>
+              <button class="button button-ghost" type="button" id="download-json">Download JSON</button>
+            </div>
+            <p class="footnote">
+              Submit opens an email draft to <strong>christian@ori-ai.dev</strong> with a structured
+              summary and also keeps a local JSON copy available.
+            </p>
+          </section>
+        </form>
+      </main>
+    </div>
   </div>
 
   <script src="config.js"></script>
