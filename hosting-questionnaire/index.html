@@ -27,16 +27,6 @@
         This intake is meant for invited collaborators only. Enter the shared password to open the
         hosting and roadmap questionnaire.
       </p>
-      <div class="hero-meta gate-meta">
-        <div class="meta-card">
-          <span class="meta-label">Experience</span>
-          <strong>Soft front-door gate</strong>
-        </div>
-        <div class="meta-card">
-          <span class="meta-label">Access style</span>
-          <strong>Session unlock</strong>
-        </div>
-      </div>
       <form class="access-form" id="access-gate-form" novalidate>
         <label class="field">
           <span>Password</span>
@@ -53,10 +43,6 @@
           <button class="button button-primary" id="access-gate-submit" type="submit">Enter Questionnaire</button>
         </div>
       </form>
-      <p class="gate-note">
-        This is a lightweight front-end gate intended to keep the page private for invited people,
-        not a full backend security system.
-      </p>
     </section>
 
     <div class="questionnaire-app" id="questionnaire-app" hidden>
@@ -101,6 +87,159 @@
               avoids needing a separate account or portal.
             </p>
           </div>
+
+          <section class="hosting-map-panel" aria-labelledby="hosting-maps-title">
+            <div class="hosting-map-heading">
+              <p class="section-kicker">Sidebar Guide</p>
+              <h3 id="hosting-maps-title">Hosting Maps</h3>
+            </div>
+            <p class="hosting-map-copy">
+              Quick planning view for this client: light traffic, about a $500 per year comfort zone,
+              Gigbuilder likely stays short-term, and the bigger long-term question is whether the site
+              grows into a custom editor and client portal.
+            </p>
+
+            <div class="hosting-signal-grid">
+              <article class="hosting-signal">
+                <span class="hosting-signal-label">Safest now</span>
+                <strong>iPower</strong>
+              </article>
+              <article class="hosting-signal">
+                <span class="hosting-signal-label">Best long-term</span>
+                <strong>Netlify</strong>
+              </article>
+              <article class="hosting-signal">
+                <span class="hosting-signal-label">Lean static pick</span>
+                <strong>Cloudflare Pages</strong>
+              </article>
+            </div>
+
+            <details class="hosting-map-details">
+              <summary>
+                <span class="hosting-map-summary-copy">
+                  <strong>Open hosting comparison</strong>
+                  <small>Pricing, capabilities, and watch-outs in plain English</small>
+                </span>
+                <span class="hosting-map-summary-pill">5 paths</span>
+              </summary>
+
+              <div class="hosting-map-stack">
+                <article class="hosting-option-card is-recommended">
+                  <div class="hosting-option-head">
+                    <h4>Stay on iPower</h4>
+                    <span class="hosting-option-tag">Safest now</span>
+                  </div>
+                  <p class="hosting-option-price">Planning price: about $400 per year</p>
+                  <dl class="hosting-option-facts">
+                    <div>
+                      <dt>Best for</dt>
+                      <dd>Low disruption and the fastest path to launch before the June renewal.</dd>
+                    </div>
+                    <div>
+                      <dt>Can support</dt>
+                      <dd>Static site launch, Gigbuilder links, lead capture, and a custom editor if we build it.</dd>
+                    </div>
+                    <div>
+                      <dt>Limits</dt>
+                      <dd>Older shared-host workflow and a weaker base if the client portal becomes a bigger product.</dd>
+                    </div>
+                  </dl>
+                </article>
+
+                <article class="hosting-option-card is-recommended">
+                  <div class="hosting-option-head">
+                    <h4>Move to Netlify</h4>
+                    <span class="hosting-option-tag">Best long-term</span>
+                  </div>
+                  <p class="hosting-option-price">Planning price: Free, $9/mo Personal, or $20/mo Pro plus usage</p>
+                  <dl class="hosting-option-facts">
+                    <div>
+                      <dt>Best for</dt>
+                      <dd>Modern deploys, previews, rollbacks, and a cleaner foundation for custom tools.</dd>
+                    </div>
+                    <div>
+                      <dt>Can support</dt>
+                      <dd>Everything above plus forms, serverless endpoints, and future auth, storage, or payment integrations.</dd>
+                    </div>
+                    <div>
+                      <dt>Limits</dt>
+                      <dd>Still not a no-code CMS or booking portal by itself. The admin and client workflows still need to be built.</dd>
+                    </div>
+                  </dl>
+                </article>
+
+                <article class="hosting-option-card">
+                  <div class="hosting-option-head">
+                    <h4>Cloudflare Pages</h4>
+                    <span class="hosting-option-tag">Lean static pick</span>
+                  </div>
+                  <p class="hosting-option-price">Planning price: static hosting can stay free; dynamic features start around $5/mo</p>
+                  <dl class="hosting-option-facts">
+                    <div>
+                      <dt>Best for</dt>
+                      <dd>Very fast static hosting and a low-cost edge platform for future lightweight app features.</dd>
+                    </div>
+                    <div>
+                      <dt>Can support</dt>
+                      <dd>Static site hosting, custom domains, privacy-friendly analytics, and future edge functions.</dd>
+                    </div>
+                    <div>
+                      <dt>Limits</dt>
+                      <dd>Editing UI, auth, data storage, and a richer event portal still require custom architecture choices.</dd>
+                    </div>
+                  </dl>
+                </article>
+
+                <article class="hosting-option-card">
+                  <div class="hosting-option-head">
+                    <h4>GitHub Pages</h4>
+                    <span class="hosting-option-tag">Great for demos</span>
+                  </div>
+                  <p class="hosting-option-price">Planning price: $0 on public repos; private workflows may require paid GitHub plans</p>
+                  <dl class="hosting-option-facts">
+                    <div>
+                      <dt>Best for</dt>
+                      <dd>Simple static publishing and lightweight repo-based review workflows.</dd>
+                    </div>
+                    <div>
+                      <dt>Can support</dt>
+                      <dd>Static marketing pages, a custom domain, and clean code-backed publishing for a brochure site.</dd>
+                    </div>
+                    <div>
+                      <dt>Limits</dt>
+                      <dd>Not meant for sensitive transactions or a real business portal, and it has soft build and bandwidth limits.</dd>
+                    </div>
+                  </dl>
+                </article>
+
+                <article class="hosting-option-card">
+                  <div class="hosting-option-head">
+                    <h4>Vercel</h4>
+                    <span class="hosting-option-tag">App-first option</span>
+                  </div>
+                  <p class="hosting-option-price">Planning price: Hobby free; Pro starts at $20/mo plus usage</p>
+                  <dl class="hosting-option-facts">
+                    <div>
+                      <dt>Best for</dt>
+                      <dd>More app-like frontends and polished preview workflows if the site grows beyond brochure scope.</dd>
+                    </div>
+                    <div>
+                      <dt>Can support</dt>
+                      <dd>Static pages plus more advanced frontend patterns, dynamic functions, and future app expansion.</dd>
+                    </div>
+                    <div>
+                      <dt>Limits</dt>
+                      <dd>Can be more platform than this project needs right now, and it still does not replace a CMS or booking system by itself.</dd>
+                    </div>
+                  </dl>
+                </article>
+              </div>
+            </details>
+
+            <p class="hosting-map-footnote">
+              Pricing is a planning snapshot for April 18, 2026 and should be rechecked before purchase.
+            </p>
+          </section>
         </aside>
 
         <form class="questionnaire-card" id="questionnaire-form" novalidate>
