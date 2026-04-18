@@ -2,7 +2,7 @@
   var config = Object.assign(
     {
       submissionMode: "mailto",
-      destinationEmail: "christian@ori-ai.com",
+      destinationEmail: "christian@ori-ai.dev",
       emailSubject: "NB Hosting Questionnaire Response",
       githubIssueUrl: "",
       externalWebhookUrl: "",
@@ -21,7 +21,7 @@
 
   function setModeCopy() {
     var modeLabel = "Email draft";
-    var helpText = "Submitting opens an email draft to christian@ori-ai.com. This is the safest default on GitHub Pages.";
+    var helpText = "Submitting opens an email draft to christian@ori-ai.dev. This is the safest default on GitHub Pages.";
 
     if (config.submissionMode === "external-webhook") {
       modeLabel = "External endpoint";
@@ -166,7 +166,7 @@
   function openMailto(payload) {
     var subject = encodeURIComponent(config.emailSubject || "NB Hosting Questionnaire Response");
     var body = encodeURIComponent(payload.summary);
-    var recipient = encodeURIComponent(config.destinationEmail || "christian@ori-ai.com");
+    var recipient = encodeURIComponent(config.destinationEmail || "christian@ori-ai.dev");
     window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
   }
 

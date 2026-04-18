@@ -901,6 +901,45 @@
     padding: 4.1rem 0;
   }
 
+  .nb-rose .grid,
+  .nb-rose .grid > *,
+  .nb-rose .card,
+  .nb-rose .table-wrap,
+  .nb-rose .package-list {
+    min-width: 0;
+  }
+
+  .nb-rose .card {
+    padding: 1.3rem;
+  }
+
+  .nb-rose .section-kicker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.55rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+  }
+
+  .nb-rose .section-kicker::after {
+    width: 1.8rem;
+    flex: 0 0 1.8rem;
+  }
+
+  .nb-rose .section-title {
+    font-size: clamp(1.95rem, 10.5vw, 3rem);
+    line-height: 1.02;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .nb-rose .card p,
+  .nb-rose .card li,
+  .nb-rose .comparison-table td,
+  .nb-rose .comparison-table th {
+    overflow-wrap: break-word;
+  }
+
   .nb-rose .button,
   .nb-rose a.button {
     width: 100%;
@@ -929,5 +968,11 @@
   .nb-rose .v6-split article,
   .nb-rose .accent-band {
     border-radius: 14px;
+  }
+}
+
+@media (max-width: 430px) {
+  .nb-rose .section-kicker::after {
+    display: none;
   }
 }

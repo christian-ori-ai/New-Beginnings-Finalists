@@ -6,7 +6,7 @@ This folder contains a responsive questionnaire app that can be opened on deskto
 
 - Asks structured questions about hosting priorities, timing, feature scope, and future roadmap.
 - Supports text input, radio choices, and checkbox selections.
-- Is currently configured to submit through `mailto:` to `christian@ori-ai.com`.
+- Is currently configured to submit through `mailto:` to `christian@ori-ai.dev`.
 - Is safe to host on GitHub Pages because the frontend is plain static HTML, CSS, and JavaScript.
 
 ## Files
@@ -26,12 +26,12 @@ By default, the form will:
 
 - create a local JSON download of the response
 - copy the summary to the clipboard when possible
-- open an email draft to `christian@ori-ai.com`
+- open an email draft to `christian@ori-ai.dev`
 
 This is the lowest-friction mode while the delivery backend is not configured yet.
 
 For the current project decision, this questionnaire should stay on `mailto` mode so respondents
-can simply send their answers to `christian@ori-ai.com`.
+can simply send their answers to `christian@ori-ai.dev`.
 
 ## GitHub Pages Reality Check
 
@@ -51,7 +51,7 @@ Edit `config.js` and change:
 ```js
 window.NBHQ_CONFIG = {
   submissionMode: "mailto",
-  destinationEmail: "christian@ori-ai.com",
+  destinationEmail: "christian@ori-ai.dev",
   emailSubject: "NB Hosting Questionnaire Response",
   githubIssueUrl: "",
   externalWebhookUrl: "",
@@ -70,7 +70,7 @@ Use one of these modes:
 ```js
 window.NBHQ_CONFIG = {
   submissionMode: "mailto",
-  destinationEmail: "christian@ori-ai.com",
+  destinationEmail: "christian@ori-ai.dev",
   emailSubject: "NB Hosting Questionnaire Response",
   githubIssueUrl: "",
   externalWebhookUrl: "",
@@ -91,7 +91,7 @@ Then:
 ```js
 window.NBHQ_CONFIG = {
   submissionMode: "github-issue",
-  destinationEmail: "christian@ori-ai.com",
+  destinationEmail: "christian@ori-ai.dev",
   emailSubject: "NB Hosting Questionnaire Response",
   githubIssueUrl: "https://github.com/OWNER/REPO/issues/new",
   externalWebhookUrl: "",
@@ -106,7 +106,7 @@ If you later add an external endpoint, use:
 ```js
 window.NBHQ_CONFIG = {
   submissionMode: "external-webhook",
-  destinationEmail: "christian@ori-ai.com",
+  destinationEmail: "christian@ori-ai.dev",
   emailSubject: "NB Hosting Questionnaire Response",
   githubIssueUrl: "",
   externalWebhookUrl: "https://your-endpoint.example.com/submit",
