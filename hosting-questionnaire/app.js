@@ -24,6 +24,8 @@
   var gateStatus = document.getElementById("access-gate-status");
   var gateSubmitButton = document.getElementById("access-gate-submit");
   var appRoot = document.getElementById("questionnaire-app");
+  var workspaceButtons = document.querySelectorAll("[data-workspace-target]");
+  var workspacePanels = document.querySelectorAll("[data-workspace-panel]");
   var ACCESS_STORAGE_KEY = "nbhq-access-v1";
   var ACCESS_HASH = "1fbbc599268d71369c304a2746aec3e60af958af23630dd25c83eb325fc531be";
   var ACCESS_FALLBACK = "anVzdG1hcnJpZWRpbnNwb2thbmU=";
@@ -113,6 +115,20 @@
       setGateStatus(error.message || "This browser could not verify the password.", "warning");
     }).finally(function () {
       setGateBusyState(false);
+    });
+  }
+
+  function setWorkspaceView(viewName) {
+    workspacePanels.forEach(function (panel) {
+      var isActive = panel.getAttribute("data-workspace-panel") === viewName;
+      panel.hidden = !isActive;
+      panel.classList.toggle("is-active", isActive);
+    });
+
+    workspaceButtons.forEach(function (button) {
+      var isActive = button.getAttribute("data-workspace-target") === viewName;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
   }
 
@@ -370,6 +386,16 @@
       setGateStatus("Enter the shared password to continue.", "neutral");
       if (gatePassword) gatePassword.focus();
     }
+  }
+
+  if (workspaceButtons.length && workspacePanels.length) {
+    workspaceButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        setWorkspaceView(button.getAttribute("data-workspace-target"));
+      });
+    });
+
+    setWorkspaceView("questionnaire");
   }
 
   setModeCopy();

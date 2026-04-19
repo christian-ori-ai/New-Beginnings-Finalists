@@ -71,7 +71,45 @@
 
       <main class="content-grid">
         <aside class="sidebar-card">
-          <h2>What We Are Solving For</h2>
+          <div class="workspace-nav-panel">
+            <p class="section-kicker">Workspace</p>
+            <h2>Choose A View</h2>
+            <div class="workspace-nav" role="tablist" aria-label="Questionnaire workspace views">
+              <button
+                class="workspace-nav-button is-active"
+                type="button"
+                data-workspace-target="questionnaire"
+                aria-pressed="true"
+              >
+                Questionnaire
+              </button>
+              <button
+                class="workspace-nav-button"
+                type="button"
+                data-workspace-target="hosting-maps"
+                aria-pressed="false"
+              >
+                Hosting Maps
+              </button>
+            </div>
+          </div>
+
+          <div class="sidebar-stat-grid">
+            <article class="sidebar-stat-card">
+              <span class="sidebar-stat-label">Renewal window</span>
+              <strong>June 2026</strong>
+            </article>
+            <article class="sidebar-stat-card">
+              <span class="sidebar-stat-label">Comfort budget</span>
+              <strong>About $500/yr</strong>
+            </article>
+            <article class="sidebar-stat-card">
+              <span class="sidebar-stat-label">Current load</span>
+              <strong>Light traffic</strong>
+            </article>
+          </div>
+
+          <h3 class="sidebar-subtitle">What We Are Solving For</h3>
           <ul class="sidebar-list">
             <li>How important it is to keep iPower vs move hosts now</li>
             <li>What deserves the most attention in phase 1</li>
@@ -87,162 +125,10 @@
               avoids needing a separate account or portal.
             </p>
           </div>
-
-          <section class="hosting-map-panel" aria-labelledby="hosting-maps-title">
-            <div class="hosting-map-heading">
-              <p class="section-kicker">Sidebar Guide</p>
-              <h3 id="hosting-maps-title">Hosting Maps</h3>
-            </div>
-            <p class="hosting-map-copy">
-              Quick planning view for this client: light traffic, about a $500 per year comfort zone,
-              Gigbuilder likely stays short-term, and the bigger long-term question is whether the site
-              grows into a custom editor and client portal.
-            </p>
-
-            <div class="hosting-signal-grid">
-              <article class="hosting-signal">
-                <span class="hosting-signal-label">Safest now</span>
-                <strong>iPower</strong>
-              </article>
-              <article class="hosting-signal">
-                <span class="hosting-signal-label">Best long-term</span>
-                <strong>Netlify</strong>
-              </article>
-              <article class="hosting-signal">
-                <span class="hosting-signal-label">Lean static pick</span>
-                <strong>Cloudflare Pages</strong>
-              </article>
-            </div>
-
-            <details class="hosting-map-details">
-              <summary>
-                <span class="hosting-map-summary-copy">
-                  <strong>Open hosting comparison</strong>
-                  <small>Pricing, capabilities, and watch-outs in plain English</small>
-                </span>
-                <span class="hosting-map-summary-pill">5 paths</span>
-              </summary>
-
-              <div class="hosting-map-stack">
-                <article class="hosting-option-card is-recommended">
-                  <div class="hosting-option-head">
-                    <h4>Stay on iPower</h4>
-                    <span class="hosting-option-tag">Safest now</span>
-                  </div>
-                  <p class="hosting-option-price">Planning price: about $400 per year</p>
-                  <dl class="hosting-option-facts">
-                    <div>
-                      <dt>Best for</dt>
-                      <dd>Low disruption and the fastest path to launch before the June renewal.</dd>
-                    </div>
-                    <div>
-                      <dt>Can support</dt>
-                      <dd>Static site launch, Gigbuilder links, lead capture, and a custom editor if we build it.</dd>
-                    </div>
-                    <div>
-                      <dt>Limits</dt>
-                      <dd>Older shared-host workflow and a weaker base if the client portal becomes a bigger product.</dd>
-                    </div>
-                  </dl>
-                </article>
-
-                <article class="hosting-option-card is-recommended">
-                  <div class="hosting-option-head">
-                    <h4>Move to Netlify</h4>
-                    <span class="hosting-option-tag">Best long-term</span>
-                  </div>
-                  <p class="hosting-option-price">Planning price: Free, $9/mo Personal, or $20/mo Pro plus usage</p>
-                  <dl class="hosting-option-facts">
-                    <div>
-                      <dt>Best for</dt>
-                      <dd>Modern deploys, previews, rollbacks, and a cleaner foundation for custom tools.</dd>
-                    </div>
-                    <div>
-                      <dt>Can support</dt>
-                      <dd>Everything above plus forms, serverless endpoints, and future auth, storage, or payment integrations.</dd>
-                    </div>
-                    <div>
-                      <dt>Limits</dt>
-                      <dd>Still not a no-code CMS or booking portal by itself. The admin and client workflows still need to be built.</dd>
-                    </div>
-                  </dl>
-                </article>
-
-                <article class="hosting-option-card">
-                  <div class="hosting-option-head">
-                    <h4>Cloudflare Pages</h4>
-                    <span class="hosting-option-tag">Lean static pick</span>
-                  </div>
-                  <p class="hosting-option-price">Planning price: static hosting can stay free; dynamic features start around $5/mo</p>
-                  <dl class="hosting-option-facts">
-                    <div>
-                      <dt>Best for</dt>
-                      <dd>Very fast static hosting and a low-cost edge platform for future lightweight app features.</dd>
-                    </div>
-                    <div>
-                      <dt>Can support</dt>
-                      <dd>Static site hosting, custom domains, privacy-friendly analytics, and future edge functions.</dd>
-                    </div>
-                    <div>
-                      <dt>Limits</dt>
-                      <dd>Editing UI, auth, data storage, and a richer event portal still require custom architecture choices.</dd>
-                    </div>
-                  </dl>
-                </article>
-
-                <article class="hosting-option-card">
-                  <div class="hosting-option-head">
-                    <h4>GitHub Pages</h4>
-                    <span class="hosting-option-tag">Great for demos</span>
-                  </div>
-                  <p class="hosting-option-price">Planning price: $0 on public repos; private workflows may require paid GitHub plans</p>
-                  <dl class="hosting-option-facts">
-                    <div>
-                      <dt>Best for</dt>
-                      <dd>Simple static publishing and lightweight repo-based review workflows.</dd>
-                    </div>
-                    <div>
-                      <dt>Can support</dt>
-                      <dd>Static marketing pages, a custom domain, and clean code-backed publishing for a brochure site.</dd>
-                    </div>
-                    <div>
-                      <dt>Limits</dt>
-                      <dd>Not meant for sensitive transactions or a real business portal, and it has soft build and bandwidth limits.</dd>
-                    </div>
-                  </dl>
-                </article>
-
-                <article class="hosting-option-card">
-                  <div class="hosting-option-head">
-                    <h4>Vercel</h4>
-                    <span class="hosting-option-tag">App-first option</span>
-                  </div>
-                  <p class="hosting-option-price">Planning price: Hobby free; Pro starts at $20/mo plus usage</p>
-                  <dl class="hosting-option-facts">
-                    <div>
-                      <dt>Best for</dt>
-                      <dd>More app-like frontends and polished preview workflows if the site grows beyond brochure scope.</dd>
-                    </div>
-                    <div>
-                      <dt>Can support</dt>
-                      <dd>Static pages plus more advanced frontend patterns, dynamic functions, and future app expansion.</dd>
-                    </div>
-                    <div>
-                      <dt>Limits</dt>
-                      <dd>Can be more platform than this project needs right now, and it still does not replace a CMS or booking system by itself.</dd>
-                    </div>
-                  </dl>
-                </article>
-              </div>
-            </details>
-
-            <p class="hosting-map-footnote">
-              Pricing is a planning snapshot for April 18, 2026 and should be rechecked before purchase.
-            </p>
-          </section>
         </aside>
 
-        <form class="questionnaire-card" id="questionnaire-form" novalidate>
+        <div class="workspace-panel-stack">
+        <form class="questionnaire-card workspace-panel is-active" id="questionnaire-form" data-workspace-panel="questionnaire" novalidate>
           <section class="section-block">
             <div class="section-heading">
               <p class="section-kicker">Section 1</p>
@@ -418,6 +304,314 @@
             </p>
           </section>
         </form>
+
+        <section class="maps-workspace-card workspace-panel" id="hosting-maps-view" data-workspace-panel="hosting-maps" hidden>
+          <header class="maps-hero">
+            <div class="maps-hero-copy">
+              <p class="section-kicker">Detailed Guide</p>
+              <h2>Hosting Maps</h2>
+              <p>
+                This view is meant to answer the real client question in plain English: which host is
+                the safest decision before the June renewal, and which one gives the cleanest runway if
+                New Beginnings grows into an editor, a client portal, or a custom booking workflow.
+              </p>
+            </div>
+
+            <div class="maps-hero-metrics">
+              <article class="maps-metric-card">
+                <span class="maps-metric-label">Decision clock</span>
+                <strong>6 to 8 weeks</strong>
+                <p>Enough time for a site launch and host move, not enough time for a perfect all-in-one platform rebuild.</p>
+              </article>
+              <article class="maps-metric-card">
+                <span class="maps-metric-label">Current spend</span>
+                <strong>About $400/yr</strong>
+                <p>The client seems comfortable spending up to roughly $500 per year for a cleaner setup.</p>
+              </article>
+              <article class="maps-metric-card">
+                <span class="maps-metric-label">Most likely path</span>
+                <strong>Phased rollout</strong>
+                <p>Launch the site first, then add editor, lead flow, and only later replace Gigbuilder if needed.</p>
+              </article>
+            </div>
+          </header>
+
+          <section class="maps-section">
+            <div class="maps-section-heading">
+              <p class="section-kicker">Quick Read</p>
+              <h3>Best Fit By Goal</h3>
+            </div>
+
+            <div class="maps-overview-grid">
+              <article class="maps-overview-card">
+                <span class="hosting-option-tag">Safest launch</span>
+                <h4>iPower</h4>
+                <p>Best if the client wants the least disruption and the cleanest route to a phase-1 launch before renewal.</p>
+              </article>
+              <article class="maps-overview-card">
+                <span class="hosting-option-tag">Best runway</span>
+                <h4>Netlify</h4>
+                <p>Best if we want better deploy previews, easier releases, and a stronger base for future custom tools.</p>
+              </article>
+              <article class="maps-overview-card">
+                <span class="hosting-option-tag">Lowest-cost modern</span>
+                <h4>Cloudflare Pages</h4>
+                <p>Best if the site stays mostly static and we want a low-cost edge platform for selective future logic.</p>
+              </article>
+              <article class="maps-overview-card">
+                <span class="hosting-option-tag">Simple public brochure</span>
+                <h4>GitHub Pages</h4>
+                <p>Best for lightweight public publishing and demo-style workflows, not for a true business portal.</p>
+              </article>
+              <article class="maps-overview-card">
+                <span class="hosting-option-tag">App-heavy future</span>
+                <h4>Vercel</h4>
+                <p>Best if the project becomes a more dynamic app and we want a very frontend-centric deployment platform.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="maps-section">
+            <div class="maps-section-heading">
+              <p class="section-kicker">Decision Flow</p>
+              <h3>How To Think About The Choice</h3>
+            </div>
+
+            <div class="decision-flow-grid">
+              <article class="flow-chart-card">
+                <h4>Flow 1: June renewal decision</h4>
+                <div class="flow-chart">
+                  <div class="flow-step">
+                    <span class="flow-step-label">Start</span>
+                    <strong>Need the lowest-risk launch before renewal?</strong>
+                    <p>If yes, keep the platform change light.</p>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">↓</div>
+                  <div class="flow-step">
+                    <span class="flow-step-label">If yes</span>
+                    <strong>Stay on iPower</strong>
+                    <p>Launch the new site, keep Gigbuilder in place, and phase the custom tooling after.</p>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">↓</div>
+                  <div class="flow-step">
+                    <span class="flow-step-label">If no</span>
+                    <strong>Want a better long-term foundation right now?</strong>
+                    <p>If the answer is yes, Netlify becomes the most practical upgrade.</p>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">↓</div>
+                  <div class="flow-step">
+                    <span class="flow-step-label">Recommendation</span>
+                    <strong>Move to Netlify</strong>
+                    <p>Better deploy previews, rollbacks, and room for the editor, forms, auth, and future portal work.</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="flow-chart-card">
+                <h4>Flow 2: future product depth</h4>
+                <div class="flow-chart">
+                  <div class="flow-step">
+                    <span class="flow-step-label">Marketing site only</span>
+                    <strong>Static pages + simple edits</strong>
+                    <p>iPower, Cloudflare Pages, or GitHub Pages can all handle the public site.</p>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">↓</div>
+                  <div class="flow-step">
+                    <span class="flow-step-label">Phase 1 product layer</span>
+                    <strong>Owner editor + lead capture</strong>
+                    <p>Netlify or iPower still work, but Netlify gives a friendlier release workflow.</p>
+                  </div>
+                  <div class="flow-arrow" aria-hidden="true">↓</div>
+                  <div class="flow-step">
+                    <span class="flow-step-label">Phase 2+</span>
+                    <strong>Client login + event dashboard + payments</strong>
+                    <p>That becomes a real product stack, so Netlify or Vercel are the cleaner host foundations.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="maps-section">
+            <div class="maps-section-heading">
+              <p class="section-kicker">Host Deep Dive</p>
+              <h3>Detailed Hosting Comparison</h3>
+            </div>
+
+            <div class="maps-option-grid">
+              <article class="maps-detail-card is-recommended">
+                <div class="hosting-option-head">
+                  <h4>Stay on iPower</h4>
+                  <span class="hosting-option-tag">Safest now</span>
+                </div>
+                <p class="hosting-option-price">Planning price: about $400 per year based on current client spend</p>
+                <dl class="hosting-option-facts">
+                  <div>
+                    <dt>Likely capability</dt>
+                    <dd>Static site launch, current Gigbuilder links, custom owner editor, lead capture, and later phased admin tools.</dd>
+                  </div>
+                  <div>
+                    <dt>Why it fits</dt>
+                    <dd>Best if the team wants familiarity, minimal DNS/email disruption, and a simpler launch before June.</dd>
+                  </div>
+                  <div>
+                    <dt>Main limitation</dt>
+                    <dd>Shared-host workflows are less pleasant for modern releases and may feel transitional once the portal scope grows.</dd>
+                  </div>
+                </dl>
+              </article>
+
+              <article class="maps-detail-card is-recommended">
+                <div class="hosting-option-head">
+                  <h4>Move to Netlify</h4>
+                  <span class="hosting-option-tag">Best long-term</span>
+                </div>
+                <p class="hosting-option-price">Official plan snapshot: Free, Personal $9/mo, Pro $20/mo plus usage credits</p>
+                <dl class="hosting-option-facts">
+                  <div>
+                    <dt>Likely capability</dt>
+                    <dd>Static site, better deploy previews, rollbacks, forms, serverless functions, and easier integrations for auth, storage, and payments.</dd>
+                  </div>
+                  <div>
+                    <dt>Why it fits</dt>
+                    <dd>Best if the site is expected to grow into a real custom toolset with owner editing and later client-facing features.</dd>
+                  </div>
+                  <div>
+                    <dt>Main limitation</dt>
+                    <dd>It is still infrastructure, not a built-in business platform. The actual editor, dashboard, and client workflows still have to be built.</dd>
+                  </div>
+                </dl>
+              </article>
+
+              <article class="maps-detail-card">
+                <div class="hosting-option-head">
+                  <h4>Cloudflare Pages</h4>
+                  <span class="hosting-option-tag">Lean static pick</span>
+                </div>
+                <p class="hosting-option-price">Official snapshot: static hosting free; Workers Paid starts at $5/mo if dynamic logic grows</p>
+                <dl class="hosting-option-facts">
+                  <div>
+                    <dt>Likely capability</dt>
+                    <dd>Fast static hosting, custom domain, analytics, and edge functions or Workers later if the site needs selective dynamic behavior.</dd>
+                  </div>
+                  <div>
+                    <dt>Why it fits</dt>
+                    <dd>Good if we want a modern host with very low base cost and the site remains mostly brochure-style for a while.</dd>
+                  </div>
+                  <div>
+                    <dt>Main limitation</dt>
+                    <dd>The richer business tooling still requires custom architecture decisions for auth, database, storage, notifications, and portal behavior.</dd>
+                  </div>
+                </dl>
+              </article>
+
+              <article class="maps-detail-card">
+                <div class="hosting-option-head">
+                  <h4>GitHub Pages</h4>
+                  <span class="hosting-option-tag">Best for demos</span>
+                </div>
+                <p class="hosting-option-price">Official snapshot: hosting can stay at $0 on public repos; GitHub Team is $4/user/mo if private team workflow matters</p>
+                <dl class="hosting-option-facts">
+                  <div>
+                    <dt>Likely capability</dt>
+                    <dd>Public static brochure pages, a custom domain, and simple repo-based publishing.</dd>
+                  </div>
+                  <div>
+                    <dt>Why it fits</dt>
+                    <dd>Great for demos, previewing concepts, and very lightweight public marketing pages.</dd>
+                  </div>
+                  <div>
+                    <dt>Main limitation</dt>
+                    <dd>Published sites are capped at 1 GB with a soft 100 GB/month bandwidth limit and are not the right home for a client portal or sensitive workflows.</dd>
+                  </div>
+                </dl>
+              </article>
+
+              <article class="maps-detail-card">
+                <div class="hosting-option-head">
+                  <h4>Vercel</h4>
+                  <span class="hosting-option-tag">App-first option</span>
+                </div>
+                <p class="hosting-option-price">Official snapshot: Hobby free; Pro starts at $20/mo plus additional usage</p>
+                <dl class="hosting-option-facts">
+                  <div>
+                    <dt>Likely capability</dt>
+                    <dd>Static pages, dynamic app routes, advanced frontend behavior, and a stronger path if the project becomes more app-like over time.</dd>
+                  </div>
+                  <div>
+                    <dt>Why it fits</dt>
+                    <dd>Strong choice if the final system shifts decisively toward a custom app rather than a mostly-static marketing site.</dd>
+                  </div>
+                  <div>
+                    <dt>Main limitation</dt>
+                    <dd>Probably more platform than phase 1 needs, and it still does not magically provide the CMS, booking system, or portal on its own.</dd>
+                  </div>
+                </dl>
+              </article>
+            </div>
+          </section>
+
+          <section class="maps-section">
+            <div class="maps-section-heading">
+              <p class="section-kicker">Recommended Sequence</p>
+              <h3>How I Would Phase This Client</h3>
+            </div>
+
+            <div class="phase-ladder">
+              <article class="phase-card">
+                <span class="phase-number">1</span>
+                <div>
+                  <h4>Choose hosting first</h4>
+                  <p>Separate the renewal decision from the bigger product roadmap so June does not get blocked by future-state wish list items.</p>
+                </div>
+              </article>
+              <article class="phase-card">
+                <span class="phase-number">2</span>
+                <div>
+                  <h4>Launch the redesigned site</h4>
+                  <p>Keep Gigbuilder in place short-term so the public site can go live without forcing the entire business system to change at once.</p>
+                </div>
+              </article>
+              <article class="phase-card">
+                <span class="phase-number">3</span>
+                <div>
+                  <h4>Add the owner editor and lead flow</h4>
+                  <p>That creates visible value early without the complexity of client logins, payments, or event dashboards yet.</p>
+                </div>
+              </article>
+              <article class="phase-card">
+                <span class="phase-number">4</span>
+                <div>
+                  <h4>Replace Gigbuilder only after scoping the portal</h4>
+                  <p>Song choices, timelines, guest counts, contracts, and payments should be treated as a dedicated phase-2 product decision.</p>
+                </div>
+              </article>
+            </div>
+
+            <div class="maps-recommendation-grid">
+              <article class="recommendation-card">
+                <span class="hosting-option-tag">Most practical</span>
+                <h4>iPower for phase 1</h4>
+                <p>If the team values minimum disruption most, launch there and revisit the host after the site is stable.</p>
+              </article>
+              <article class="recommendation-card">
+                <span class="hosting-option-tag">Most future-friendly</span>
+                <h4>Netlify for phase 1 + 2</h4>
+                <p>If the team already knows it wants custom tools, Netlify is the cleaner foundation to grow into.</p>
+              </article>
+              <article class="recommendation-card">
+                <span class="hosting-option-tag">What not to force</span>
+                <h4>Do not tie June to a full portal build</h4>
+                <p>The host choice and the full client-management platform do not need to be solved in the exact same release window.</p>
+              </article>
+            </div>
+
+            <p class="hosting-map-footnote">
+              Pricing is a planning snapshot checked on April 18, 2026. Final purchase decisions should recheck vendor pricing and any email or DNS dependencies first.
+            </p>
+          </section>
+        </section>
+        </div>
       </main>
     </div>
   </div>

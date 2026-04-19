@@ -22,6 +22,11 @@
       closeDropdowns();
       dropdown.classList.toggle('is-open', willOpen);
       button.setAttribute('aria-expanded', String(willOpen));
+      if (window.matchMedia('(max-width: 1040px)').matches) {
+        requestAnimationFrame(function () {
+          button.blur();
+        });
+      }
     });
   });
 

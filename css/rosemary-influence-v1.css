@@ -354,10 +354,15 @@
   z-index: 120;
 }
 
-.nb-rose .nav-dropdown:hover .nav-dropdown-menu,
-.nb-rose .nav-dropdown:focus-within .nav-dropdown-menu,
 .nb-rose .nav-dropdown.is-open .nav-dropdown-menu {
   display: flex;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nb-rose .nav-dropdown:hover .nav-dropdown-menu,
+  .nb-rose .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: flex;
+  }
 }
 
 .nb-rose .nav-dropdown-menu a {
@@ -838,11 +843,6 @@
 
   .nb-rose .nav-dropdown.is-open .nav-dropdown-menu {
     display: flex;
-  }
-
-  .nb-rose .nav-dropdown:hover .nav-dropdown-menu,
-  .nb-rose .nav-dropdown:focus-within .nav-dropdown-menu {
-    display: none;
   }
 }
 
