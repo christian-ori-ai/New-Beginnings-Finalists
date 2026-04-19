@@ -25,6 +25,7 @@
 }
 
 .nb-rose .site-shell {
+  overflow-x: hidden;
   overflow-x: clip;
 }
 
@@ -814,6 +815,11 @@
     border-color: #d4c6be;
     background: #fff9f2;
     box-shadow: var(--rose-shadow);
+    max-height: calc(100vh - 6.7rem);
+    max-height: calc(100dvh - 6.7rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
 
   .nb-rose .site-nav a {
@@ -913,6 +919,16 @@
     padding: 1.3rem;
   }
 
+  .nb-rose .nb-page-intro .container,
+  .nb-rose .section-heading,
+  .nb-rose .service-grid > *,
+  .nb-rose .package-grid > *,
+  .nb-rose .collections-grid > *,
+  .nb-rose .footer-grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .nb-rose .section-kicker {
     display: flex;
     flex-wrap: wrap;
@@ -936,8 +952,12 @@
   .nb-rose .card p,
   .nb-rose .card li,
   .nb-rose .comparison-table td,
-  .nb-rose .comparison-table th {
-    overflow-wrap: break-word;
+  .nb-rose .comparison-table th,
+  .nb-rose h3,
+  .nb-rose h4,
+  .nb-rose .package-price,
+  .nb-rose .section-lead {
+    overflow-wrap: anywhere;
   }
 
   .nb-rose .button,

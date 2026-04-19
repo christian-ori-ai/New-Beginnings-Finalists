@@ -3,6 +3,11 @@
   const toggle = document.querySelector('[data-nav-toggle]');
   const menu = document.querySelector('[data-site-menu]');
   const dropdowns = document.querySelectorAll('[data-nav-dropdown]');
+  const mobileNavQuery = window.matchMedia('(max-width: 1040px)');
+
+  function isMobileNav() {
+    return mobileNavQuery.matches;
+  }
 
   function closeDropdowns() {
     dropdowns.forEach(function (dropdown) {
@@ -12,17 +17,25 @@
     });
   }
 
+  function closeMenu() {
+    if (menu) menu.classList.remove('is-open');
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+    closeDropdowns();
+  }
+
   dropdowns.forEach(function (dropdown) {
     const button = dropdown.querySelector('[data-nav-dropdown-toggle]');
     if (!button) return;
 
     button.addEventListener('click', function (event) {
       event.preventDefault();
+      event.stopPropagation();
       const willOpen = !dropdown.classList.contains('is-open');
       closeDropdowns();
       dropdown.classList.toggle('is-open', willOpen);
       button.setAttribute('aria-expanded', String(willOpen));
-      if (window.matchMedia('(max-width: 1040px)').matches) {
+      if (isMobileNav()) {
         requestAnimationFrame(function () {
           button.blur();
         });
@@ -34,24 +47,59 @@
     if (!event.target.closest('[data-nav-dropdown]')) {
       closeDropdowns();
     }
+
+    if (
+      toggle &&
+      menu &&
+      isMobileNav() &&
+      menu.classList.contains('is-open') &&
+      !event.target.closest('[data-site-header]')
+    ) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      closeMenu();
+    }
   });
 
   if (toggle && menu) {
-    toggle.addEventListener('click', function () {
+    toggle.addEventListener('click', function (event) {
+      event.stopPropagation();
       const open = menu.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(open));
       document.body.classList.toggle('menu-open', open);
-      if (!open) closeDropdowns();
+      if (!open) {
+        closeDropdowns();
+      } else if (isMobileNav()) {
+        requestAnimationFrame(function () {
+          toggle.blur();
+        });
+      }
     });
 
     menu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
-        menu.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
-        closeDropdowns();
+        closeMenu();
       });
     });
+  }
+
+  function syncNavForViewport() {
+    if (!isMobileNav()) {
+      closeMenu();
+    } else if (menu && !menu.classList.contains('is-open')) {
+      document.body.classList.remove('menu-open');
+    }
+  }
+
+  syncNavForViewport();
+  if (typeof mobileNavQuery.addEventListener === 'function') {
+    mobileNavQuery.addEventListener('change', syncNavForViewport);
+  } else if (typeof mobileNavQuery.addListener === 'function') {
+    mobileNavQuery.addListener(syncNavForViewport);
   }
 
   function onScroll() {
@@ -88,6 +136,23 @@
     });
   }
 
+  function closeFaqItem(item) {
+    item.classList.remove('is-open');
+    const trigger = item.querySelector('[data-faq-trigger]');
+    const answer = item.querySelector('.faq-answer');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    if (answer) answer.style.maxHeight = '0px';
+  }
+
+  function openFaqItem(item, trigger) {
+    item.classList.add('is-open');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    const answer = item.querySelector('.faq-answer');
+    if (answer) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  }
+
   document.querySelectorAll('[data-faq-trigger]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       const item = btn.closest('.faq-item');
@@ -95,15 +160,18 @@
       const wasOpen = item.classList.contains('is-open');
 
       document.querySelectorAll('.faq-item.is-open').forEach(function (openItem) {
-        openItem.classList.remove('is-open');
-        const trigger = openItem.querySelector('[data-faq-trigger]');
-        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        closeFaqItem(openItem);
       });
 
       if (!wasOpen) {
-        item.classList.add('is-open');
-        btn.setAttribute('aria-expanded', 'true');
+        openFaqItem(item, btn);
       }
+    });
+  });
+
+  window.addEventListener('resize', function () {
+    document.querySelectorAll('.faq-item.is-open .faq-answer').forEach(function (answer) {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
     });
   });
 })();

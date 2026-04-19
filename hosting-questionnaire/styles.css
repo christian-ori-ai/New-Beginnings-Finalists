@@ -414,6 +414,21 @@ button {
   min-width: 0;
 }
 
+.content-grid > *,
+.workspace-panel,
+.maps-workspace-card,
+.questionnaire-card,
+.maps-metric-card,
+.maps-overview-card,
+.maps-detail-card,
+.recommendation-card,
+.flow-chart-card,
+.phase-card,
+.phase-card > *,
+.hosting-option-head > * {
+  min-width: 0;
+}
+
 .workspace-panel[hidden] {
   display: none !important;
 }
@@ -435,6 +450,21 @@ button {
 .maps-workspace-card h3,
 .maps-workspace-card h4 {
   margin: 0;
+}
+
+.hero h1,
+.access-gate h1,
+.sidebar-card h2,
+.section-heading h2,
+.maps-section-heading h3,
+.maps-workspace-card h3,
+.maps-workspace-card h4,
+.hosting-option-price,
+.hosting-option-facts dd,
+.phase-card p,
+.hero-copy,
+.note-block p {
+  overflow-wrap: anywhere;
 }
 
 .maps-hero {
@@ -955,6 +985,19 @@ button {
 
   .hero::after {
     inset-inline: 1.2rem;
+  }
+
+  .workspace-nav-button,
+  .hosting-option-tag {
+    white-space: normal;
+  }
+
+  .action-row {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
   }
 
   .phase-card {
