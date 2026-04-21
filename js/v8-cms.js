@@ -6,7 +6,7 @@
     "about-us.html": "About",
     "services.html": "Wedding Planner",
     "weddings.html": "Wedding DJ Services",
-    "events.html": "Company & School DJ Services",
+    "events.html": "Company & Private Event DJ Services",
     "pricing.html": "Pricing",
     "gallery.html": "Gallery",
     "contact.html": "Contact"
@@ -54,7 +54,7 @@
 
     { key: "pricing.intro", page: "pricing.html", label: "Intro Section" },
     { key: "pricing.weddings", page: "pricing.html", label: "Wedding Pricing Section" },
-    { key: "pricing.events", page: "pricing.html", label: "Company + School Pricing Section" },
+    { key: "pricing.events", page: "pricing.html", label: "Company + Private Event Pricing Section" },
     { key: "pricing.guidance", page: "pricing.html", label: "Policy + Guidance Section" },
 
     { key: "gallery.intro", page: "gallery.html", label: "Intro Section" },

@@ -359,13 +359,6 @@
   display: flex;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .nb-rose .nav-dropdown:hover .nav-dropdown-menu,
-  .nb-rose .nav-dropdown:focus-within .nav-dropdown-menu {
-    display: flex;
-  }
-}
-
 .nb-rose .nav-dropdown-menu a {
   border-radius: 8px;
   font-size: 0.62rem;
