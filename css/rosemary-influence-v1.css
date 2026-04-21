@@ -359,6 +359,22 @@
   display: flex;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .nb-rose .nav-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 0.6rem;
+  }
+
+  .nb-rose .nav-dropdown:hover .nav-dropdown-menu,
+  .nb-rose .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: flex;
+  }
+}
+
 .nb-rose .nav-dropdown-menu a {
   border-radius: 8px;
   font-size: 0.62rem;
