@@ -144,7 +144,47 @@
   display: block;
 }
 
+.nb-rose .brand-full-art,
+.nb-rose .brand-compact-name-art {
+  position: relative;
+  display: block;
+  line-height: 0;
+}
+
+.nb-rose .brand-full-art {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.nb-rose .brand-full-art::after,
+.nb-rose .brand-compact-name-art::after {
+  content: "";
+  position: absolute;
+  background: rgba(248, 243, 237, 0.98);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.nb-rose .brand-full-art::after {
+  top: 64.3%;
+  right: 4.15%;
+  width: 1.6%;
+  height: 8.9%;
+  border-radius: 999px;
+  transform: rotate(14deg);
+}
+
+.nb-rose .brand-compact-name-art::after {
+  top: 10.5%;
+  right: 4.15%;
+  width: 1.75%;
+  height: 24%;
+  border-radius: 999px;
+  transform: rotate(13deg);
+}
+
 .nb-rose .brand-full img {
+  display: block;
   width: 100%;
   filter: drop-shadow(0 8px 14px rgba(105, 76, 104, 0.08));
 }
@@ -326,8 +366,11 @@
   }
 
   .nb-rose .site-header.is-scrolled .brand-full img {
-    width: min(100%, 11.6rem);
     opacity: 0.96;
+  }
+
+  .nb-rose .site-header.is-scrolled .brand-full-art {
+    width: min(100%, 11.6rem);
   }
 }
 
@@ -355,7 +398,7 @@
       transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .nb-rose .brand-full img {
+  .nb-rose .brand-full-art {
     width: min(100%, 16.2rem);
   }
 
@@ -380,8 +423,13 @@
     gap: 0.08rem;
   }
 
+  .nb-rose .brand-compact-name-art {
+    display: block;
+  }
+
   .nb-rose .brand-compact-name {
     display: block;
+    width: 100%;
     height: auto;
     filter: drop-shadow(0 8px 14px rgba(105, 76, 104, 0.08));
   }
@@ -411,7 +459,7 @@
     opacity: 1;
   }
 
-  .nb-rose .site-header.is-scrolled .brand-compact-name {
+  .nb-rose .site-header.is-scrolled .brand-compact-name-art {
     max-width: none;
     opacity: 1;
   }
@@ -436,7 +484,7 @@
     width: clamp(4rem, 8vw, 4.8rem);
   }
 
-  .nb-rose .brand-compact-name {
+  .nb-rose .brand-compact-name-art {
     width: clamp(17.5rem, 36vw, 21.5rem);
   }
 
@@ -449,10 +497,10 @@
   }
 
   .nb-rose .site-header.is-scrolled .brand-compact-mark {
-    width: clamp(4rem, 8vw, 4.8rem);
+    width: clamp(4.2rem, 8.4vw, 5.05rem);
   }
 
-  .nb-rose .site-header.is-scrolled .brand-compact-name {
+  .nb-rose .site-header.is-scrolled .brand-compact-name-art {
     width: clamp(17.5rem, 36vw, 21.5rem);
   }
 
@@ -482,7 +530,7 @@
     width: clamp(4.45rem, 4.9vw, 5.25rem);
   }
 
-  .nb-rose .brand-compact-name {
+  .nb-rose .brand-compact-name-art {
     width: clamp(21rem, 24vw, 24.8rem);
   }
 
@@ -495,10 +543,10 @@
   }
 
   .nb-rose .site-header.is-scrolled .brand-compact-mark {
-    width: clamp(4.45rem, 4.9vw, 5.25rem);
+    width: clamp(4.7rem, 5.2vw, 5.55rem);
   }
 
-  .nb-rose .site-header.is-scrolled .brand-compact-name {
+  .nb-rose .site-header.is-scrolled .brand-compact-name-art {
     width: clamp(21rem, 24vw, 24.8rem);
   }
 
@@ -1166,7 +1214,7 @@
     width: min(100% - 1.3rem, var(--container));
   }
 
-  .nb-rose .brand-full img {
+  .nb-rose .brand-full-art {
     width: min(100%, 212px);
   }
 
