@@ -266,8 +266,8 @@
   }
 
   .nb-rose .header-contact {
-    top: 0.92rem;
-    right: 2.92rem;
+    top: 3.54rem;
+    right: 0;
     flex-direction: column;
     align-items: center;
     gap: 0.26rem;
@@ -294,8 +294,8 @@
   }
 
   .nb-rose .site-header.is-scrolled .header-contact {
-    top: 0.92rem;
-    right: 2.92rem;
+    top: 3.54rem;
+    right: 0;
   }
 
   .nb-rose .site-header.is-scrolled .header-contact-chip {
