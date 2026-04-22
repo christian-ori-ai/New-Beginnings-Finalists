@@ -1097,6 +1097,21 @@
   }
 }
 
+@media (max-width: 699.98px) {
+  .nb-rose .header-contact {
+    top: 3.63rem;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.26rem;
+  }
+
+  .nb-rose .site-header.is-scrolled .header-contact {
+    top: 3.63rem;
+    right: 0;
+  }
+}
+
 @media (max-width: 920px) {
   .nb-rose .section {
     padding: 5rem 0;
