@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage Editor Demo | New Beginnings</title>
+  <link rel="icon" type="image/png" href="../images/favicon-butterfly.png?v=20260418c" sizes="256x256">
+  <link rel="shortcut icon" href="../images/favicon.ico?v=20260418c" type="image/x-icon">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260421b">
+</head>
+<body>
+  <div class="editor-app">
+    <header class="editor-topbar">
+      <div class="editor-topbar-copy">
+        <p class="editor-kicker">WordPress-Style Demo</p>
+        <h1>Homepage editor sample</h1>
+        <p>This demo only affects the homepage preview in this browser. It is built to show how a very simple owner editor could work without exposing the rest of the site.</p>
+      </div>
+      <div class="editor-topbar-actions">
+        <button class="editor-button editor-button-secondary" type="button" data-open-home>Open Home Page</button>
+        <button class="editor-button editor-button-primary" type="button" data-reset-demo>Reset Demo</button>
+      </div>
+    </header>
+
+    <main class="editor-layout">
+      <aside class="editor-sidebar">
+        <section class="editor-card">
+          <div class="editor-card-head">
+            <div>
+              <p class="editor-section-kicker">Section 1</p>
+              <h2>Content</h2>
+            </div>
+          </div>
+          <p class="editor-helper">Edit just the homepage copy to start. The hero title supports simple HTML like <code>&lt;em&gt;</code>.</p>
+          <div class="editor-stack" data-content-controls></div>
+        </section>
+
+        <section class="editor-card">
+          <div class="editor-card-head">
+            <div>
+              <p class="editor-section-kicker">Section 2</p>
+              <h2>Typography</h2>
+            </div>
+          </div>
+          <p class="editor-helper">Adjust a few key text systems instead of every single element.</p>
+          <div class="editor-stack" data-typography-controls></div>
+        </section>
+
+        <section class="editor-card">
+          <div class="editor-card-head">
+            <div>
+              <p class="editor-section-kicker">Section 3</p>
+              <h2>Tiles &amp; Panels</h2>
+            </div>
+          </div>
+          <p class="editor-helper">Try different card and quote-panel treatments to show how easy visual updates could be.</p>
+          <div class="editor-stack" data-tile-controls></div>
+        </section>
+
+        <section class="editor-card">
+          <div class="editor-card-head">
+            <div>
+              <p class="editor-section-kicker">Section 4</p>
+              <h2>Images</h2>
+            </div>
+          </div>
+          <p class="editor-helper">Paste a full image URL, use a site-relative path like <code>images/photo.avif</code>, or try a local upload just for the preview.</p>
+          <div class="editor-stack" data-image-controls></div>
+        </section>
+      </aside>
+
+      <section class="preview-shell">
+        <div class="preview-bar">
+          <div class="preview-copy">
+            <p class="editor-section-kicker">Live Preview</p>
+            <h2>Homepage only</h2>
+            <p data-status-message>Loading preview...</p>
+          </div>
+          <div class="preview-actions">
+            <div class="preview-toggle-group" role="tablist" aria-label="Preview width">
+              <button class="preview-toggle is-active" type="button" data-preview-size="desktop" aria-pressed="true">Desktop</button>
+              <button class="preview-toggle" type="button" data-preview-size="tablet" aria-pressed="false">Tablet</button>
+              <button class="preview-toggle" type="button" data-preview-size="mobile" aria-pressed="false">Mobile</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-stage" data-preview-stage data-size="desktop">
+          <iframe class="preview-frame" title="Homepage editor preview" data-preview-frame></iframe>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js?v=20260421b"></script>
+</body>
+</html>
