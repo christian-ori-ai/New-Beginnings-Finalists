@@ -105,6 +105,9 @@
   function onScroll() {
     if (!header) return;
     header.classList.toggle('is-scrolled', window.scrollY > 10);
+    if (isMobileNav() && menu && menu.classList.contains('is-open')) {
+      closeMenu();
+    }
   }
 
   onScroll();

@@ -254,15 +254,17 @@
   }
 
   .nb-rose .brand {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 0.78rem;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 13.25rem);
+    display: block;
+    margin: 0 0 0.78rem;
   }
 
   .nb-rose .brand-lockup {
-    width: min(100%, 13.25rem);
-    margin-inline: auto;
+    width: 100%;
+    margin-inline: 0;
   }
 
   .nb-rose .header-contact {
@@ -311,11 +313,14 @@
   }
 
   .nb-rose .site-header.is-scrolled .brand {
-    margin: 0 auto 0.55rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(100%, 12.2rem);
+    margin: 0 0 0.55rem;
   }
 
   .nb-rose .site-header.is-scrolled .brand-lockup {
-    width: min(100%, 12.2rem);
+    width: 100%;
   }
 
   .nb-rose .site-header.is-scrolled .brand-full img {
