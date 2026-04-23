@@ -493,7 +493,7 @@
   }
 
   .nb-rose .site-header.is-scrolled .brand-lockup {
-    height: clamp(5rem, 6.8vw, 5.9rem);
+    height: clamp(5.2rem, 7.1vw, 6.15rem);
   }
 
   .nb-rose .site-header.is-scrolled .brand-compact-mark {
@@ -501,11 +501,11 @@
   }
 
   .nb-rose .site-header.is-scrolled .brand-compact-name-art {
-    width: clamp(17.5rem, 36vw, 21.5rem);
+    width: clamp(18.9rem, 39vw, 23rem);
   }
 
   .nb-rose .site-header.is-scrolled .brand-compact-tagline {
-    width: clamp(10rem, 20vw, 12.4rem);
+    width: clamp(10.4rem, 21vw, 12.9rem);
   }
 
   .nb-rose .site-header.is-scrolled .site-nav {
@@ -539,7 +539,7 @@
   }
 
   .nb-rose .site-header.is-scrolled .brand-lockup {
-    height: clamp(5.45rem, 6vw, 6.25rem);
+    height: clamp(5.7rem, 6.35vw, 6.55rem);
   }
 
   .nb-rose .site-header.is-scrolled .brand-compact-mark {
@@ -547,11 +547,11 @@
   }
 
   .nb-rose .site-header.is-scrolled .brand-compact-name-art {
-    width: clamp(21rem, 24vw, 24.8rem);
+    width: clamp(22.6rem, 26vw, 27rem);
   }
 
   .nb-rose .site-header.is-scrolled .brand-compact-tagline {
-    width: clamp(11.8rem, 13.4vw, 14.4rem);
+    width: clamp(12.2rem, 14vw, 15rem);
   }
 
   .nb-rose .site-header.is-scrolled .site-nav {
